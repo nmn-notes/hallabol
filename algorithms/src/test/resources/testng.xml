@@ -1,0 +1,7 @@
+<suite name="HallaBolSuite">
+  <test verbose="5" name="Hallabol_Algorithms_Test">
+    <packages>
+      <package name="org.nmn.notes.algorithms.*" />
+    </packages>
+  </test>
+</suite>
