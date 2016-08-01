@@ -12,7 +12,7 @@ public class BubbleSort {
 	/**
 	 * Sort array of integers
 	 * 
-	 * This is a comparison sort algorithm with n^2 complexity
+	 * This is a comparison sort algorithm with O(n^2) complexity
 	 * 
 	 * @param arr integer array
 	 * @return sorted integer array
