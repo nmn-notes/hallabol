@@ -33,4 +33,15 @@ public class SortingTestClient {
 		int [] expected = {1, 3, 7, 8, 9};
 		assertEquals(result, expected);
 	}
+
+	/**
+	 * Test selection sorting
+	 */
+	@Test
+	public void testSelectionSort() {
+		int [] arr = {9, 3, 7, 8, 1};
+		int [] result = SelectionSort.sort(arr);
+		int [] expected = {1, 3, 7, 8, 9};
+		assertEquals(result, expected);
+	}
 }
