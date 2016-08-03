@@ -1,5 +1,7 @@
 package org.nmn.notes.algorithms.sorting;
 
+import static org.nmn.notes.util.ArrayUtils.swap;
+
 /**
  * Selection sort example
  * 
@@ -26,9 +28,7 @@ public class SelectionSort {
 				}
 			}
 			//Swap elements at i and minIndex
-			int temp = arr[i];
-			arr[i] = arr[minIndex];
-			arr[minIndex] = temp;
+			swap(arr, i, minIndex);
 		}
 		return arr;
 	}

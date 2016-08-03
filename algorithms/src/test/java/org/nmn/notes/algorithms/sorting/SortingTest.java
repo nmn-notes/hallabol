@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
  * 
  * @author Navin Naidu
  */
-public class SortingTestClient {
+public class SortingTest {
 
 	/**
 	 * Test bubble sorting
@@ -41,6 +41,17 @@ public class SortingTestClient {
 	public void testSelectionSort() {
 		int [] arr = {9, 3, 7, 8, 1};
 		int [] result = SelectionSort.sort(arr);
+		int [] expected = {1, 3, 7, 8, 9};
+		assertEquals(result, expected);
+	}
+
+	/**
+	 * Test merge sorting
+	 */
+	@Test
+	public void testMergeSort() {
+		int [] arr = {9, 3, 7, 8, 1};
+		int [] result = MergeSort.sort(arr);
 		int [] expected = {1, 3, 7, 8, 9};
 		assertEquals(result, expected);
 	}
