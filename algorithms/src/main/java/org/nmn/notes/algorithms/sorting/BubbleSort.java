@@ -1,6 +1,5 @@
 package org.nmn.notes.algorithms.sorting;
 
-import static org.nmn.notes.util.ArrayUtils.printArray;
 import static org.nmn.notes.util.ArrayUtils.swap;
 
 /**

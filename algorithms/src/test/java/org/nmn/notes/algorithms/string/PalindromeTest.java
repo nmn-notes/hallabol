@@ -1,4 +1,4 @@
-package org.nmn.notes.algorithm.string;
+package org.nmn.notes.algorithms.string;
 
 import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.assertFalse;
