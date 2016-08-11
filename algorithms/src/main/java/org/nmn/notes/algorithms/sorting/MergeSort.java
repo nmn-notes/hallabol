@@ -2,6 +2,8 @@ package org.nmn.notes.algorithms.sorting;
 
 /**
  * Merge sort example
+ * 
+ * @author nmn-notes
  */
 public class MergeSort {
 

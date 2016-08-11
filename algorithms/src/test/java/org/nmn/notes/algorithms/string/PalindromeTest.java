@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 /**
  * Test class for {@link Palindrome}
+ * @author nmn-notes
  */
 public class PalindromeTest {
 

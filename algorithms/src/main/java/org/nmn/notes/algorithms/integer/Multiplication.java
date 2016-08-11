@@ -1,5 +1,10 @@
 package org.nmn.notes.algorithms.integer;
 
+/**
+ * A class used to multiply two integers
+ * 
+ * @author nmn-notes
+ */
 public class Multiplication {
 
 	/**

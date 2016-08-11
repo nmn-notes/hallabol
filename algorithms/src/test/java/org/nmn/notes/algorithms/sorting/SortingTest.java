@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 /**
  * Test client for array sorting algorithms
  * 
- * @author Navin Naidu
+ * @author nmn-notes
  */
 public class SortingTest {
 

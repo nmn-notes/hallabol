@@ -4,6 +4,8 @@ import static org.nmn.notes.util.Constants.EMPTY_STRING;
 
 /**
  * Utility class for String
+ * 
+ * @author nmn-notes
  */
 public final class StringUtils {
 

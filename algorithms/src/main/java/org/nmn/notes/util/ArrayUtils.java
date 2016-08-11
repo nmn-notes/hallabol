@@ -2,6 +2,8 @@ package org.nmn.notes.util;
 
 /**
  * Utility methods for array
+ * 
+ * @author nmn-notes
  */
 public final class ArrayUtils {
 

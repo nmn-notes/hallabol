@@ -5,7 +5,7 @@ import static org.nmn.notes.util.ArrayUtils.swap;
 /**
  * Selection sort example
  * 
- * @author Navin Naidu
+ * @author nmn-notes
  */
 public class SelectionSort {
 

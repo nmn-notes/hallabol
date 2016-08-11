@@ -3,7 +3,7 @@ package org.nmn.notes.algorithms.sorting;
 /**
  * Insertion sort example
  * 
- * @author Navin Naidu
+ * @author nmn-notes
  */
 public class InsertionSort {
 

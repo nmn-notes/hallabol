@@ -7,7 +7,9 @@ import static org.nmn.notes.util.StringUtils.isBlankOrEmpty;
  * 
  * Palidrome is a string which has same character sequence from start and end.
  * Ex. palindromes: abcdcba and abccba, 
- * whereas abcdba is not a palidrome since a matches a, b matches b but c does not match d. 
+ * whereas abcdba is not a palidrome since a matches a, b matches b but c does not match d.
+ * 
+ * @author nmn-notes
  */
 public class Palindrome {
 
