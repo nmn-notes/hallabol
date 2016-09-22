@@ -17,8 +17,8 @@ public class Palindrome {
 	 * Check if given string is a palindrome or not.
 	 * 
 	 * @param str String
-	 * @return true if palidrome
-	 * 		   false otherwise
+	 * @return <code>true</code> if palidrome;
+	 * 		   <code>false</code> otherwise
 	 */
 	public static boolean isPalindrome(final String str) {
 		if (isBlankOrEmpty(str)) {
