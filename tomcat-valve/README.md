@@ -1,0 +1,1 @@
+Apache tomcat valve (https://tomcat.apache.org/tomcat-7.0-doc/config/valve.html) can be used to intercept all incoming requests and achieve functionalities like telemetry, logging, SSO.
