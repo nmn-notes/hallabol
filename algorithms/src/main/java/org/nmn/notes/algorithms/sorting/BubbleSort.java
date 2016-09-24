@@ -3,7 +3,7 @@ package org.nmn.notes.algorithms.sorting;
 import static org.nmn.notes.util.ArrayUtils.swap;
 
 /**
- * Bubble sort example
+ * Bubble sort.
  * 
  * @author nmn-notes
  */
@@ -14,8 +14,8 @@ public class BubbleSort {
 	 * 
 	 * This is a comparison sort algorithm with O(n^2) complexity
 	 * 
-	 * @param arr integer array
-	 * @return sorted integer array
+	 * @param arr integer array.
+	 * @return sorted integer array.
 	 */
 	public static int[] sort(int [] arr) {
 		for (int i = 0; i < arr.length; i++) {

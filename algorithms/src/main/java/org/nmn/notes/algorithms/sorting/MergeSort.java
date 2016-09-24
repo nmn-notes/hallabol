@@ -1,7 +1,7 @@
 package org.nmn.notes.algorithms.sorting;
 
 /**
- * Merge sort example
+ * Merge sort.
  * 
  * @author nmn-notes
  */
@@ -46,6 +46,10 @@ public class MergeSort {
 
 	/**
 	 * Merge arr1 and arr2 to arr by comparing elements of each array and copying the smaller one.
+	 * 
+	 * @param arr1 first integer array.
+	 * @param arr2 second integer array.
+	 * @return merged array.
 	 */
 	private static int [] merge(int [] arr1, int [] arr2) {
 		int i = 0;

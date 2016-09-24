@@ -3,7 +3,7 @@ package org.nmn.notes.algorithms.sorting;
 import static org.nmn.notes.util.ArrayUtils.swap;
 
 /**
- * Quick sort example
+ * Quick sort.
  * 
  * @author nmn-notes
  */

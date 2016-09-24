@@ -1,7 +1,7 @@
 package org.nmn.notes.algorithms.sorting;
 
 /**
- * Insertion sort example
+ * Insertion sort.
  * 
  * @author nmn-notes
  */
@@ -12,8 +12,8 @@ public class InsertionSort {
 	 * 
 	 * This is a comparison sort algorithm with O(n^2) complexity
 	 * 
-	 * @param arr integer array
-	 * @return sorted integer array
+	 * @param arr integer array.
+	 * @return sorted integer array.
 	 */
 	public static int [] sort(int [] arr) {
 		for (int j = 1; j < arr.length; j++) {
