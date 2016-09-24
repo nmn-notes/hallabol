@@ -55,4 +55,14 @@ public class SortingTest {
 		int [] expected = {1, 3, 7, 8, 9};
 		assertEquals(result, expected);
 	}
+	/**
+	 * Test quick sort
+	 */
+	@Test
+	public void testQuickSort() {
+		int [] arr = {9, 3, 7, 8, 1, 1, 2, 10};
+		int [] result = QuickSort.sort(arr);
+		int [] expected = {1, 1, 2, 3, 7, 8, 9, 10};
+		assertEquals(result, expected);
+	}
 }
