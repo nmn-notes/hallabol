@@ -7,3 +7,7 @@ Collection of common sorting, searching ,string manipulation and other algorithm
 4. Merge sort
 5. Quick sort
 6. Heap sort
+
+###Binary Search
+1. Iteratively
+2. Recursively
