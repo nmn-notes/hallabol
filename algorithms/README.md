@@ -11,3 +11,6 @@ Collection of common sorting, searching ,string manipulation and other algorithm
 ###Binary Search
 1. Iteratively
 2. Recursively
+
+###Fibonacci
+1. Naive recursive polynomial complexity
