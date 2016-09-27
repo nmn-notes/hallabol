@@ -1,7 +1,7 @@
 package org.nmn.notes.ds.linkedlist;
 
 /**
- * Singly Linked List.
+ * Singly Linked List. This implementation is not threadsafe.
  *
  * @author nmn-notes
  * @param <E> the element type
@@ -47,13 +47,13 @@ public class SinglyLinkedList<E> {
 	}
 
 	/**
-	 * Get element at index of the singly linkedlist.
+	 * Get nth element in the singly linkedlist.
 	 * 
 	 * @param index the index of the node.
 	 * @return element if node is available;
 	 * 		   null otherwise. 
 	 */
-	public E get(int index) {
+	public E getNth(int index) {
 		Node<E> current = header;
 		int currentIndex = 0;
 		while (currentIndex < index && current != null) {
@@ -64,12 +64,54 @@ public class SinglyLinkedList<E> {
 	}
 
 	/**
-	 * Get the current size of the linkedlist.
+	 * Pop 1st element from the list.
 	 * 
-	 * @return size of the linkedlist.
+	 * @return first element in the list if available;
+	 * 		   null otherwise.
+	 */
+	public E pop() {
+		Node<E> current = header;
+		if (current == null) {
+			return null;
+		}
+		header = header.next;
+		E element = current.data;
+		current.next = null;
+		return element;
+	}
+
+	/**
+	 * Get the current length of the linkedlist.
+	 * 
+	 * @return length of the linkedlist.
+	 */
+	public int length() {
+		return size;
+	}
+
+	/**
+	 * Get the current length of the linkedlist.
+	 * 
+	 * @return length of the linkedlist.
 	 */
 	public int size() {
+		int size = 0;
+		Node<E> current = header;
+		while (current != null) {
+			size++;
+			current = current.next;
+		}
 		return size;
+	}
+
+	/**
+	 * Prints all the elements in the list.
+	 */
+	public void printList() {
+		Node<E> current = header;
+		while (current != null) {
+			System.out.println("Element: " + current.data);
+		}
 	}
 
 	/**
@@ -108,5 +150,6 @@ public class SinglyLinkedList<E> {
 			this.data = data;
 			this.next = next;
 		}
+
 	}
 }
