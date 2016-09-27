@@ -26,4 +26,21 @@ public class FibonacciTest {
 		assertEquals(Fibonacci.getNthFibonacci(20), 6765);
 		assertEquals(Fibonacci.getNthFibonacci(22), Fibonacci.getNthFibonacci(21) + Fibonacci.getNthFibonacci(20));
 	}
+
+	/**
+	 * Test GetNthFibonacciBottomUp.
+	 */
+	@Test
+	public void testGetNthFibonacciBottomUp() {
+		assertEquals(Fibonacci.getNthFibonacciBottomUp(0), 0);
+		assertEquals(Fibonacci.getNthFibonacciBottomUp(1), 1);
+		assertEquals(Fibonacci.getNthFibonacciBottomUp(2), 1);
+		assertEquals(Fibonacci.getNthFibonacciBottomUp(3), 2);
+		assertEquals(Fibonacci.getNthFibonacciBottomUp(4), 3);
+		assertEquals(Fibonacci.getNthFibonacciBottomUp(5), 5);
+		assertEquals(Fibonacci.getNthFibonacciBottomUp(6), 8);
+		assertEquals(Fibonacci.getNthFibonacciBottomUp(20), 6765);
+		assertEquals(Fibonacci.getNthFibonacciBottomUp(22), 
+			Fibonacci.getNthFibonacciBottomUp(21) + Fibonacci.getNthFibonacciBottomUp(20));
+	}
 }
