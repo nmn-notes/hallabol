@@ -136,6 +136,45 @@ public class SinglyLinkedListTest {
 	}
 
 	/**
+	 * Test frontback split of the list.
+	 */
+	@Test
+	public void testFrontBackSplit() {
+		SinglyLinkedList<Integer> sll = new SinglyLinkedList<Integer>();
+		SinglyLinkedList<Integer> newList = sll.frontBackSplit();
+		assertEquals(newList.size(), 0);
+		sll.add(1);
+		newList = sll.frontBackSplit();
+		assertEquals(sll.size(), 1);
+		assertEquals(newList.size(), 0);
+		sll.add(2);
+		newList = sll.frontBackSplit();
+		assertEquals(sll.size(), 1);
+		assertEquals(newList.size(), 1);
+		assertEquals(sll.getNth(0), new Integer(1));
+		assertEquals(newList.getNth(0), new Integer(2));
+
+		sll.add(2);
+		sll.add(3);
+		newList = sll.frontBackSplit();
+		assertEquals(sll.size(), 2);
+		assertEquals(newList.size(), 1);
+		assertEquals(sll.getNth(0), new Integer(1));
+		assertEquals(sll.getNth(1), new Integer(2));
+		assertEquals(newList.getNth(0), new Integer(3));
+
+		sll.add(3);
+		sll.add(4);
+		newList = sll.frontBackSplit();
+		assertEquals(sll.size(), 2);
+		assertEquals(newList.size(), 2);
+		assertEquals(sll.getNth(0), new Integer(1));
+		assertEquals(sll.getNth(1), new Integer(2));
+		assertEquals(newList.getNth(0), new Integer(3));
+		assertEquals(newList.getNth(1), new Integer(4));
+	}
+
+	/**
 	 * Test pop of linkedlist.
 	 */
 	@Test

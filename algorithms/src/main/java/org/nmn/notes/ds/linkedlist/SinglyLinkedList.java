@@ -10,7 +10,7 @@ public class SinglyLinkedList<E> {
 
 	/** The header. */
 	private Node<E> header;
-	
+
 	/** The size. */
 	private int size;
 
@@ -201,6 +201,35 @@ public class SinglyLinkedList<E> {
 			sortedInsert(current.data);
 			current = next;
 		}
+	}
+
+	/**
+	 * Split the list into two sublists - one for the first half, and one for the back half.
+	 * If the number of elements is odd, the extra element should go in the front list.
+	 * @return the second list 
+	 */
+	public SinglyLinkedList<E> frontBackSplit() {
+		SinglyLinkedList<E> newList = new SinglyLinkedList<E>();
+
+		//base condition.
+		if (header == null) {
+			return newList;
+		}
+
+		Node<E> slow = header;
+		Node<E> fast = slow.next;
+		int count = 1;
+		while (fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
+			count++;
+		}
+		newList.header = slow.next;
+		slow.next = null;
+		//update size
+		newList.size = size - count;
+		size = count;
+		return newList;
 	}
 
 	/**
