@@ -2,6 +2,7 @@ package org.nmn.notes.ds.linkedlist;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.assertFalse;
 
 import org.testng.annotations.Test;
 
@@ -75,6 +76,29 @@ public class SinglyLinkedListTest {
 		assertTrue(sll.deleteList());
 		assertEquals(sll.size(), 0);
 	}
+
+	/**
+	 * Test insertion of new node at specified index.
+	 */
+	@Test
+	public void testInsertNth() {
+		SinglyLinkedList<Integer> sll = new SinglyLinkedList<Integer>();
+		assertFalse(sll.insertNth(1, 1));
+		assertEquals(sll.size(), 0);
+		assertTrue(sll.insertNth(0, 1));
+		assertEquals(sll.size(), 1);
+		assertEquals(sll.getNth(0), new Integer(1));
+		assertTrue(sll.insertNth(0, 2));
+		assertEquals(sll.size(), 2);
+		assertEquals(sll.getNth(0), new Integer(2));
+		assertEquals(sll.getNth(1), new Integer(1));
+		assertTrue(sll.insertNth(2, 3));
+		assertEquals(sll.size(), 3);
+		assertEquals(sll.getNth(2), new Integer(3));
+		assertFalse(sll.insertNth(6, 6));
+		assertEquals(sll.size(), 3);
+	}
+
 	/**
 	 * Test pop of linkedlist.
 	 */

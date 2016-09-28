@@ -116,6 +116,42 @@ public class SinglyLinkedList<E> {
 	}
 
 	/**
+	 * Insert a new node at specified index in the list.
+	 * 
+	 * @param index at which node has to be inserted.
+	 * @param e element of the new node.
+	 * @return <code>true</code> if node is inserted at specified index;
+	 * 		   <code>false</code> otherwise.
+	 */
+	public boolean insertNth(int index, E e) {
+		//boundary conditions.
+		if (index < 0 || index > size) {
+			return false;
+		}
+
+		//Insert at the head.
+		if (index == 0) {
+			return addFirst(e);
+		}
+
+		Node<E> current = header;
+		int currentIndex = 1;
+
+		while (current != null) {
+			if (currentIndex == index) {
+				Node<E> newNode = new Node<E>(e, current.next);
+				current.next = newNode;
+				size++;
+				return true;
+			}
+			current = current.next;
+			currentIndex++;
+		}
+
+		return false;
+	}
+
+	/**
 	 * Get the current length of the linkedlist.
 	 * 
 	 * @return length of the linkedlist.
