@@ -116,6 +116,26 @@ public class SinglyLinkedListTest {
 	}
 
 	/**
+	 * Test sorting of the list.
+	 */
+	@Test
+	public void testInsertSort() {
+		SinglyLinkedList<Integer> sll = new SinglyLinkedList<Integer>();
+		sll.add(3);
+		sll.add(2);
+		sll.add(1);
+		assertEquals(sll.getNth(0), new Integer(3));
+		assertEquals(sll.getNth(1), new Integer(2));
+		assertEquals(sll.getNth(2), new Integer(1));
+		assertEquals(sll.size(), 3);
+		sll.insertSort();
+		assertEquals(sll.getNth(0), new Integer(1));
+		assertEquals(sll.getNth(1), new Integer(2));
+		assertEquals(sll.getNth(2), new Integer(3));
+		assertEquals(sll.size(), 3);
+	}
+
+	/**
 	 * Test pop of linkedlist.
 	 */
 	@Test

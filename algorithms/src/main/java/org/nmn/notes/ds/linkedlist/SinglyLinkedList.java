@@ -162,7 +162,7 @@ public class SinglyLinkedList<E> {
 		Node<E> current = header;
 
 		//insert node at the beginning of the list.
-		if (current.compareTo(e) > 0) {
+		if (current == null || current.compareTo(e) > 0) {
 			addFirst(e);
 			return 0;
 		}
@@ -174,6 +174,7 @@ public class SinglyLinkedList<E> {
 				//insert node here.
 				Node<E> newNode = new Node<E>(e, current.next);
 				current.next = newNode;
+				size++;
 				return index;
 			}
 			current = next;
@@ -183,7 +184,23 @@ public class SinglyLinkedList<E> {
 
 		//insert node at the end of the list.
 		current.next = new Node<E>(e, null);
+		size++;
 		return index;
+	}
+
+	/**
+	 * Sort the list.
+	 */
+	public void insertSort() {
+		Node<E> current = header;
+		header = null;
+		size = 0;
+		while (current != null) {
+			Node<E> next = current.next;
+			current.next = null;
+			sortedInsert(current.data);
+			current = next;
+		}
 	}
 
 	/**
