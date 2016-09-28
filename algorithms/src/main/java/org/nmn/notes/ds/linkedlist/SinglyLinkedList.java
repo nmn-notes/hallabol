@@ -2,7 +2,7 @@ package org.nmn.notes.ds.linkedlist;
 
 /**
  * Singly Linked List. This implementation is not threadsafe.
- *
+ * 
  * @author nmn-notes
  * @param <E> the element type
  */
@@ -152,6 +152,41 @@ public class SinglyLinkedList<E> {
 	}
 
 	/**
+	 * Insert element at the correct sorted position in the list.
+	 * Will work only when the list is already sorted and inserted element is {@link Comparable}.
+	 * 
+	 * @param e element to be inserted.
+	 * @return index at which the element is sorted.
+	 */
+	public int sortedInsert(E e) {
+		Node<E> current = header;
+
+		//insert node at the beginning of the list.
+		if (current.compareTo(e) > 0) {
+			addFirst(e);
+			return 0;
+		}
+
+		Node<E> next = current.next;
+		int index = 1;
+		while (current != null && next != null) {
+			if (current.compareTo(e) < 0 && next.compareTo(e) > 0) {
+				//insert node here.
+				Node<E> newNode = new Node<E>(e, current.next);
+				current.next = newNode;
+				return index;
+			}
+			current = next;
+			next = next.next;
+			index++;
+		}
+
+		//insert node at the end of the list.
+		current.next = new Node<E>(e, null);
+		return index;
+	}
+
+	/**
 	 * Get the current length of the linkedlist.
 	 * 
 	 * @return length of the linkedlist.
@@ -200,10 +235,10 @@ public class SinglyLinkedList<E> {
 
 	/**
 	 * Singly linkedlist node.
-	 *
+	 * 
 	 * @param <E> the element type
 	 */
-	private static class Node<E> {
+	private static class Node<E> implements Comparable<E> {
 
 		/** The data. */
 		E data;
@@ -222,5 +257,15 @@ public class SinglyLinkedList<E> {
 			this.next = next;
 		}
 
+		@SuppressWarnings({ "unchecked", "rawtypes" })
+		@Override
+		public int compareTo(E o) {
+			if (o instanceof Comparable) {
+				return ((Comparable)data).compareTo((Comparable)o);
+			}
+			return -1;
+		}
+
 	}
+
 }
