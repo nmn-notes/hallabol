@@ -1,6 +1,7 @@
 package org.nmn.notes.ds.linkedlist;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
@@ -23,6 +24,22 @@ public class SinglyLinkedListTest {
 		sll.add(2);
 		assertEquals(sll.length(), 2);
 	}
+	/**
+	 * Test number of times an element occurs in the list.
+	 */
+	@Test
+	public void testCount() {
+		SinglyLinkedList<Integer> sll = new SinglyLinkedList<Integer>();
+		sll.add(1);
+		sll.add(2);
+		sll.add(3);
+		sll.add(4);
+		assertEquals(sll.count(3), 1);
+		sll.add(3);
+		sll.add(3);
+		sll.add(3);
+		assertEquals(sll.count(3), 4);
+	}
 
 	/**
 	 * Test getNth element of linkedlist.
@@ -44,6 +61,20 @@ public class SinglyLinkedListTest {
 		assertEquals(sll.getNth(3), new Integer(4));
 	}
 
+	/**
+	 * Test deleteList
+	 */
+	@Test
+	public void testDeleteList() {
+		SinglyLinkedList<Integer> sll = new SinglyLinkedList<Integer>();
+		sll.add(1);
+		sll.add(2);
+		sll.add(3);
+		sll.add(4);
+		assertEquals(sll.size(), 4);
+		assertTrue(sll.deleteList());
+		assertEquals(sll.size(), 0);
+	}
 	/**
 	 * Test pop of linkedlist.
 	 */

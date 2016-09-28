@@ -18,3 +18,11 @@ Collection of common sorting, searching ,string manipulation and other algorithm
 
 ###Data Structures
 1. Singly LinkedList
+  1. add
+  2. addFirst
+  3. count
+  4. getNth
+  5. deleteList
+  6. pop
+  7. length
+  8. size

@@ -47,6 +47,24 @@ public class SinglyLinkedList<E> {
 	}
 
 	/**
+	 * Counts the number of times a given element occurs in the list.
+	 * 
+	 * @param e element
+	 * @return count
+	 */
+	public int count(E e) {
+		int count = 0;
+		Node<E> current = header;
+		while (current != null) {
+			if (current.data.equals(e)) {
+				count++;
+			}
+			current = current.next;
+		}
+		return count;
+	}
+
+	/**
 	 * Get nth element in the singly linkedlist.
 	 * 
 	 * @param index the index of the node.
@@ -61,6 +79,23 @@ public class SinglyLinkedList<E> {
 			currentIndex++;
 		}
 		return current != null ? current.data : null;
+	}
+
+	/**
+	 * Deletes the entire list.
+	 * @return <code>true</code> if list was deleted successfully;
+	 * 		   <code>false</code> otherwise.
+	 */
+	public boolean deleteList() {
+		Node<E> current = header;
+		while (current != null) {
+			Node<E> prev = current;
+			current = current.next;
+			prev.next = null;
+		}
+		header = null;
+		size = 0;
+		return true;
 	}
 
 	/**
