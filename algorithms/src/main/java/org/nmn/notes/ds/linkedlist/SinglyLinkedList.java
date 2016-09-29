@@ -249,6 +249,87 @@ public class SinglyLinkedList<E> {
 	}
 
 	/**
+	 * Remove first match of the element in the list.
+	 * 
+	 * @param e element to be removed
+	 * @return index of the element if removed; -1 otherwise.
+	 */
+	public int remove(E e) {
+		Node<E> current = header;
+
+		if (current == null) {
+			return -1;
+		}
+		else if (current.data.equals(e)) {
+			header = header.next;
+			size--;
+			return 0;
+		}
+
+		int index = 1;
+		Node<E> prev = current;
+		current = current.next;
+
+		while (current != null) {
+			if (current.data.equals(e)) {
+				prev.next = current.next;
+				size--;
+				return index;
+			}
+			prev = current;
+			current = current.next;
+			index++;
+		}
+		return -1;
+	}
+
+	/**
+	 * Remove last match of the element in the list.
+	 * 
+	 * @param e element to be removed
+	 * @return index of the element if removed; -1 otherwise.
+	 */
+	public int removeLast(E e) {
+		Node<E> current = header;
+		Node<E> prev = header;
+
+		Node<E> lastMatchPrev = null;
+		int lastMatchIndex = -1;
+		if (current.data.equals(e)) {
+			lastMatchPrev = current;
+			lastMatchIndex = 0;
+		}
+
+		int index = 1;
+		prev = current;
+		current = current.next;
+
+		while (current != null) {
+			if (current.data.equals(e)) {
+				lastMatchPrev = prev;
+				lastMatchIndex = index;
+			}
+			prev = current;
+			current = current.next;
+			index++;
+		}
+
+		if (lastMatchPrev != null) {
+			//1st element
+			if (lastMatchIndex == 0) {
+				header = lastMatchPrev.next;
+			}
+			else {
+				lastMatchPrev.next = lastMatchPrev.next.next;
+			}
+			size--;
+			return lastMatchIndex;
+		}
+
+		return -1;
+	}
+
+	/**
 	 * Get the current length of the linkedlist.
 	 * 
 	 * @return length of the linkedlist.
@@ -326,6 +407,11 @@ public class SinglyLinkedList<E> {
 				return ((Comparable)data).compareTo((Comparable)o);
 			}
 			return -1;
+		}
+
+		@Override
+		public String toString() {
+			return "Node [data=" + data + ", next=" + next + "]";
 		}
 
 	}

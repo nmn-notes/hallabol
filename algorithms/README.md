@@ -28,6 +28,8 @@ Collection of common sorting, searching ,string manipulation and other algorithm
   8. insertSort
   9. frontBackSplit
   10. removeDuplicates
-  11. pop
-  12. length
-  13. size
+  11. remove
+  12. removeLast
+  13. pop
+  14. length
+  15. size

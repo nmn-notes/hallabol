@@ -175,9 +175,9 @@ public class SinglyLinkedListTest {
 	}
 
 	/**
-	 * Test duplicates from the list.
+	 * Test remove duplicates from the list.
 	 */
-	public void testDeleteDuplicates() {
+	public void testRemoveDuplicates() {
 		SinglyLinkedList<Integer> sll = new SinglyLinkedList<Integer>();
 		sll.removeDuplicates();
 		assertEquals(sll.size(), 0);
@@ -208,6 +208,44 @@ public class SinglyLinkedListTest {
 		assertEquals(sll.getNth(3), new Integer(4));
 		assertEquals(sll.getNth(4), new Integer(5));
 		assertEquals(sll.getNth(5), new Integer(6));
+	}
+
+	/**
+	 * Test removal of the first match of the element from the list.
+	 */
+	@Test
+	public void testRemove() {
+		SinglyLinkedList<Integer> sll = new SinglyLinkedList<Integer>();
+		sll.add(1);
+		sll.add(2);
+		sll.add(3);
+		sll.add(3);
+		assertEquals(sll.remove(1), 0);
+		assertEquals(sll.remove(3), 1);
+		assertEquals(sll.size(), 2);
+		assertEquals(sll.remove(3), 1);
+		assertEquals(sll.size(), 1);
+		assertEquals(sll.remove(5), -1);
+		assertEquals(sll.size(), 1);
+	}
+
+	/**
+	 * Test removal of the last match of the element from the list.
+	 */
+	@Test
+	public void testRemoveLast() {
+		SinglyLinkedList<Integer> sll = new SinglyLinkedList<Integer>();
+		sll.add(1);
+		sll.add(2);
+		sll.add(3);
+		sll.add(3);
+		assertEquals(sll.removeLast(1), 0);
+		assertEquals(sll.removeLast(3), 2);
+		assertEquals(sll.size(), 2);
+		assertEquals(sll.removeLast(3), 1);
+		assertEquals(sll.size(), 1);
+		assertEquals(sll.removeLast(5), -1);
+		assertEquals(sll.size(), 1);
 	}
 
 	/**
