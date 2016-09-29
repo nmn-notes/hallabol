@@ -175,6 +175,42 @@ public class SinglyLinkedListTest {
 	}
 
 	/**
+	 * Test duplicates from the list.
+	 */
+	public void testDeleteDuplicates() {
+		SinglyLinkedList<Integer> sll = new SinglyLinkedList<Integer>();
+		sll.removeDuplicates();
+		assertEquals(sll.size(), 0);
+		sll.add(1);
+		sll.removeDuplicates();
+		assertEquals(sll.size(), 1);
+		sll.add(1);
+		assertEquals(sll.size(), 2);
+		sll.removeDuplicates();
+		assertEquals(sll.size(), 1);
+		sll.add(2);
+		sll.add(2);
+		sll.add(2);
+		assertEquals(sll.size(), 4);
+		sll.removeDuplicates();
+		assertEquals(sll.size(), 2);
+		sll.add(3);
+		sll.add(3);
+		sll.add(4);
+		sll.add(5);
+		sll.add(6);
+		assertEquals(sll.size(), 7);
+		sll.removeDuplicates();
+		assertEquals(sll.size(), 6);
+		assertEquals(sll.getNth(0), new Integer(1));
+		assertEquals(sll.getNth(1), new Integer(2));
+		assertEquals(sll.getNth(2), new Integer(3));
+		assertEquals(sll.getNth(3), new Integer(4));
+		assertEquals(sll.getNth(4), new Integer(5));
+		assertEquals(sll.getNth(5), new Integer(6));
+	}
+
+	/**
 	 * Test pop of linkedlist.
 	 */
 	@Test

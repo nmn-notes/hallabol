@@ -233,6 +233,22 @@ public class SinglyLinkedList<E> {
 	}
 
 	/**
+	 * Delete any duplicate nodes from the sorted increasing list.
+	 */
+	public void removeDuplicates() {
+		Node<E> current = header;
+		while (current != null) {
+			Node<E> next = current.next;
+			while (next != null && current.data.equals(next.data)) {
+				next = next.next;
+				size--;
+			}
+			current.next = next;
+			current = current.next;
+		}
+	}
+
+	/**
 	 * Get the current length of the linkedlist.
 	 * 
 	 * @return length of the linkedlist.
