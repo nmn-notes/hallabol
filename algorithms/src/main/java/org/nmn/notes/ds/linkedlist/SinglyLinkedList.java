@@ -330,6 +330,35 @@ public class SinglyLinkedList<E> {
 	}
 
 	/**
+	 * Reverse list recursively.
+	 */
+	public void reverseRecursively() {
+		header = reverseRecursively(null, header);
+	}
+
+	/**
+	 * Reverse list recursively.
+	 * @param prev the previous node in the list.
+	 * @param current node in the list.
+	 * @return new header of the list.
+	 */
+	private Node<E> reverseRecursively(Node<E> prev, Node<E> current) {
+		//empty list.
+		if (current == null) {
+			return current;
+		}
+		//last node in the list.
+		else if (current.next == null) {
+			current.next = prev;
+			return current;
+		}
+
+		Node<E> head = reverseRecursively(current, current.next);
+		current.next = prev;
+		return head;
+	}
+
+	/**
 	 * Get the current length of the linkedlist.
 	 * 
 	 * @return length of the linkedlist.
