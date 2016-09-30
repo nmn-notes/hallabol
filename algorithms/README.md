@@ -31,6 +31,7 @@ Collection of common sorting, searching ,string manipulation and other algorithm
   11. remove
   12. removeLast
   13. reverseRecursively
-  13. pop
-  14. length
-  15. size
+  14. reverseIteratively
+  15. pop
+  16. length
+  17. size

@@ -254,13 +254,73 @@ public class SinglyLinkedListTest {
 	@Test
 	public void testReverseRecursively() {
 		SinglyLinkedList<Integer> sll = new SinglyLinkedList<Integer>();
+		assertEquals(sll.getNth(0), null);
+		sll.reverseRecursively();
+		assertEquals(sll.getNth(0), null);
+
+		sll.add(1);
+		assertEquals(sll.getNth(0), new Integer(1));
+		sll.reverseRecursively();
+		assertEquals(sll.getNth(0), new Integer(1));
+
+		sll = new SinglyLinkedList<Integer>();
+		sll.add(1);
+		sll.add(2);
+
+		assertEquals(sll.getNth(0), new Integer(1));
+		assertEquals(sll.getNth(1), new Integer(2));
+		sll.reverseRecursively();
+		assertEquals(sll.getNth(0), new Integer(2));
+		assertEquals(sll.getNth(1), new Integer(1));
+
+		sll = new SinglyLinkedList<Integer>();
 		sll.add(1);
 		sll.add(2);
 		sll.add(3);
+
 		assertEquals(sll.getNth(0), new Integer(1));
 		assertEquals(sll.getNth(1), new Integer(2));
 		assertEquals(sll.getNth(2), new Integer(3));
 		sll.reverseRecursively();
+		assertEquals(sll.getNth(0), new Integer(3));
+		assertEquals(sll.getNth(1), new Integer(2));
+		assertEquals(sll.getNth(2), new Integer(1));
+	}
+
+	/**
+	 * Test iterative reversal of the list.
+	 */
+	@Test
+	public void testReverseIteratively() {
+		SinglyLinkedList<Integer> sll = new SinglyLinkedList<Integer>();
+		assertEquals(sll.getNth(0), null);
+		sll.reverseIteratively();
+		assertEquals(sll.getNth(0), null);
+
+		sll.add(1);
+		assertEquals(sll.getNth(0), new Integer(1));
+		sll.reverseIteratively();
+		assertEquals(sll.getNth(0), new Integer(1));
+
+		sll = new SinglyLinkedList<Integer>();
+		sll.add(1);
+		sll.add(2);
+
+		assertEquals(sll.getNth(0), new Integer(1));
+		assertEquals(sll.getNth(1), new Integer(2));
+		sll.reverseIteratively();
+		assertEquals(sll.getNth(0), new Integer(2));
+		assertEquals(sll.getNth(1), new Integer(1));
+
+		sll = new SinglyLinkedList<Integer>();
+		sll.add(1);
+		sll.add(2);
+		sll.add(3);
+
+		assertEquals(sll.getNth(0), new Integer(1));
+		assertEquals(sll.getNth(1), new Integer(2));
+		assertEquals(sll.getNth(2), new Integer(3));
+		sll.reverseIteratively();
 		assertEquals(sll.getNth(0), new Integer(3));
 		assertEquals(sll.getNth(1), new Integer(2));
 		assertEquals(sll.getNth(2), new Integer(1));

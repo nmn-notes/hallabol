@@ -359,6 +359,26 @@ public class SinglyLinkedList<E> {
 	}
 
 	/**
+	 * Iteratively reverse the entire list.
+	 */
+	public void reverseIteratively() {
+		Node<E> current = header;
+		//empty list.
+		if (current == null) {
+			return;
+		}
+
+		Node<E> prev = null;
+		while (current != null) {
+			Node<E> next = current.next;
+			current.next = prev;
+			prev = current;
+			current = next;
+		}
+		header = prev;
+	}
+
+	/**
 	 * Get the current length of the linkedlist.
 	 * 
 	 * @return length of the linkedlist.
