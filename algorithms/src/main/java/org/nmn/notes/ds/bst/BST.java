@@ -1,5 +1,7 @@
 package org.nmn.notes.ds.bst;
 
+import java.util.ArrayList;
+
 /**
  * Binary Search Tree.
  *
@@ -147,12 +149,34 @@ public class BST {
 		}
 		return false;
 	}
+
 	/**
 	 * Size of the BST.
 	 * @return total number of elements in BST.
 	 */
 	public int size() {
 		return size;
+	}
+
+	/**
+	 * Print in-order elements of the tree.
+	 * 
+	 * @return {@link ArrayList} of in-order representation of tree.
+	 */
+	public ArrayList<Integer> printInOrder() {
+		ArrayList<Integer> result = new ArrayList<Integer>(size);
+		printInOrder(root, result);
+		return result;
+	}
+
+	private void printInOrder(Node node, ArrayList<Integer> list) {
+		if (node == null) {
+			return;
+		}
+		printInOrder(node.left, list);
+		System.out.print(node.data + " ");
+		list.add(node.data);
+		printInOrder(node.right, list);
 	}
 
 	/**

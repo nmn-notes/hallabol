@@ -42,3 +42,4 @@ Collection of common sorting, searching ,string manipulation and other algorithm
   3. minValue
   4. maxValue
   5. hasPathSum
+  6. printInOrder

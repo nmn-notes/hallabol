@@ -2,8 +2,10 @@ package org.nmn.notes.ds.bst;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.assertNull;
+import static org.testng.Assert.assertTrue;
+
+import java.util.ArrayList;
 
 import org.testng.annotations.Test;
 
@@ -93,5 +95,26 @@ public class BSTTest {
 
 		assertFalse(bst.hasPathSum(56));
 		assertFalse(bst.hasPathSum(10));
+	}
+
+	/**
+	 * Test in-order traversal of BST.
+	 */
+	@Test
+	public void testPrintInOrder() {
+		BST bst = new BST();
+		bst.insertIteratively(10);
+		bst.insertIteratively(15);
+		bst.insertIteratively(8);
+		bst.insertIteratively(12);
+		bst.insertIteratively(19);
+		ArrayList<Integer> actual = bst.printInOrder();
+		ArrayList<Integer> expected = new ArrayList<Integer>();
+		expected.add(8);
+		expected.add(10);
+		expected.add(12);
+		expected.add(15);
+		expected.add(19);
+		assertEquals(actual, expected);
 	}
 }
