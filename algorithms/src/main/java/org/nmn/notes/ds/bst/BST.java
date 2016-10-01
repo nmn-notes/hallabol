@@ -283,6 +283,31 @@ public class BST {
 	}
 
 	/**
+	 * Given two binary trees, return true if they are structurally identical -- 
+	 * they are made of nodes with the same values arranged in the same way.
+	 */
+	public static boolean sameTree(BST bst1, BST bst2) {
+		return sameTree(bst1.root, bst2.root);
+	}
+
+	private static boolean sameTree(Node node1, Node node2) {
+		//both nodes are null
+		if (node1 == null && node2 == null) {
+			return true;
+		}
+		//only one node is null
+		else if ((node1 == null && node2 != null) || (node1 != null && node2 == null)) {
+			return false;
+		}
+		//both nodes are NOT null but data is not equal
+		else if (!node1.data.equals(node2.data)) {
+			return false;
+		}
+		//recursively call the routine on left and right child tree.
+		return sameTree(node1.left, node2.left) & sameTree(node1.right, node2.right);
+	}
+
+	/**
 	 * Node of BST.
 	 */
 	private static class Node {

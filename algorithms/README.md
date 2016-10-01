@@ -48,3 +48,4 @@ Collection of common sorting, searching ,string manipulation and other algorithm
   9. maxDepth
   10. mirror
   11. doubleTree
+  12. sameTree

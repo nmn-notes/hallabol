@@ -246,4 +246,37 @@ public class BSTTest {
 		expected.add(19);
 		assertEquals(actual, expected);
 	}
+
+	/**
+	 * Test if two BST are structurally same.
+	 */
+	@Test
+	public void testSameTree() {
+		BST bst1 = new BST();
+		BST bst2 = new BST();
+		assertTrue(BST.sameTree(bst1, bst2));
+		bst1.insertIteratively(10);
+		assertFalse(BST.sameTree(bst1, bst2));
+		bst2.insertIteratively(10);
+		assertTrue(BST.sameTree(bst1, bst2));
+
+		bst1.insertIteratively(5);
+		bst1.insertIteratively(2);
+		bst1.insertIteratively(8);
+		bst1.insertIteratively(15);
+		bst1.insertIteratively(25);
+		bst1.insertIteratively(35);
+
+		bst2.insertIteratively(5);
+		bst2.insertIteratively(2);
+		bst2.insertIteratively(8);
+		bst2.insertIteratively(15);
+		bst2.insertIteratively(25);
+		bst2.insertIteratively(35);
+
+		assertTrue(BST.sameTree(bst1, bst2));
+
+		bst2.insertIteratively(36);
+		assertFalse(BST.sameTree(bst1, bst2));
+	}
 }
