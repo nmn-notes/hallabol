@@ -27,13 +27,54 @@ public class BST {
 			size++;
 			return new Node(data);
 		}
-		else if (data < node.data) {
+		else if (data <= node.data) {
 			node.left = insertRecursively(data, node.left);
 		}
 		else {
 			node.right = insertRecursively(data, node.right);
 		}
 		return node;
+	}
+
+	/**
+	 * Insert data in BST iteratively.
+	 * 
+	 * @param data to be inserted in BST.
+	 * @return <code>true</code> if data inserted successfully;
+	 * 		   <code>false</code> otherwise.
+	 */
+	public boolean insertIteratively(Integer data) {
+		if (root == null) {
+			root = new Node(data);
+			size++;
+			return true;
+		}
+
+		Node current = root;
+		Node prev = null;
+		boolean left = true;
+		Node newNode = new Node(data);
+
+		while(current != null) {
+			prev = current;
+			if (data <= current.data) {
+				left = true;
+				current = current.left;
+			}
+			else {
+				left = false;
+				current = current.right;
+			}
+		}
+
+		if (left) {
+			prev.left = newNode;
+		}
+		else {
+			prev.right = newNode;
+		}
+		size++;
+		return true;
 	}
 
 	/**
