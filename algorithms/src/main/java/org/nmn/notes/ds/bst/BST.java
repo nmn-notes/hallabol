@@ -108,6 +108,25 @@ public class BST {
 	}
 
 	/**
+	 * Given a sum, return true if the tree has a root-to-leaf path such that adding up all 
+	 * the values along the path equals the given sum. Return false if no such path can be found.
+	 * 
+	 * @param sum from root-to-leaf path
+	 * @return <code>true</code> if root-to-leaf path has sum;
+	 *		   <code>false</code> otherwise.
+	 */
+	public boolean hasPathSum(Integer sum) {
+		return hasPathSum(sum, root);
+	}
+
+	private boolean hasPathSum(Integer sum, Node current) {
+		if (current == null) {
+			return sum == 0;
+		}
+		return hasPathSum(sum - current.data, current.left) || hasPathSum(sum - current.data, current.right);
+	}
+
+	/**
 	 * Checks if data is present in the BST.
 	 * @param data to be checked.
 	 * @return <code>true</code> if data is available in BST;

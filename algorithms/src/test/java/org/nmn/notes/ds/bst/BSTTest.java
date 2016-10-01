@@ -72,4 +72,26 @@ public class BSTTest {
 		assertEquals(bst.maxValue(), new Integer(30));
 	}
 
+	/**
+	 * Test hasPathSum in BST.
+	 */
+	@Test
+	public void testHasPathSum() {
+		BST bst = new BST();
+		assertFalse(bst.hasPathSum(1));
+
+		bst.insertIteratively(10);
+		bst.insertIteratively(5);
+		bst.insertIteratively(8);
+		bst.insertIteratively(2);
+		bst.insertIteratively(20);
+		bst.insertIteratively(25);
+
+		assertTrue(bst.hasPathSum(17));
+		assertTrue(bst.hasPathSum(23));
+		assertTrue(bst.hasPathSum(55));
+
+		assertFalse(bst.hasPathSum(56));
+		assertFalse(bst.hasPathSum(10));
+	}
 }
