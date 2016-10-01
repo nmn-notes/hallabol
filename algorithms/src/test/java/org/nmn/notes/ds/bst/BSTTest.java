@@ -3,6 +3,7 @@ package org.nmn.notes.ds.bst;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.assertNull;
 
 import org.testng.annotations.Test;
 
@@ -52,6 +53,23 @@ public class BSTTest {
 		assertEquals(bst.size(), 1);
 		bst.insertIteratively(2);
 		assertEquals(bst.size(), 2);
+	}
+
+	/**
+	 * Test minimum and maximum value in BST.
+	 */
+	@Test
+	public void testMinMaxValue() {
+		BST bst = new BST();
+		assertNull(bst.minValue());
+		assertNull(bst.maxValue());
+		bst.insertIteratively(13);
+		bst.insertIteratively(30);
+		bst.insertRecursively(10);
+		bst.insertIteratively(1);
+		bst.insertIteratively(2);
+		assertEquals(bst.minValue(), new Integer(1));
+		assertEquals(bst.maxValue(), new Integer(30));
 	}
 
 }

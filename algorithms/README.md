@@ -39,3 +39,5 @@ Collection of common sorting, searching ,string manipulation and other algorithm
 2. Binary Search Tree (BST)
   1. insertRecursively
   2. insertIteratively
+  3. minValue
+  4. maxValue

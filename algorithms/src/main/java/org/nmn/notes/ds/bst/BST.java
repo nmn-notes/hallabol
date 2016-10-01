@@ -78,6 +78,36 @@ public class BST {
 	}
 
 	/**
+	 * Returns minimum value in BST.
+	 * @return minimum value in BST if available; null otherwise.
+	 */
+	public Integer minValue() {
+		return (root != null)? minValue(root) : null;
+	}
+
+	private Integer minValue(Node current) {
+		if (current.left == null) {
+			return current.data;
+		}
+		return minValue(current.left);
+	}
+
+	/**
+	 * Returns maximum value in BST.
+	 * @return maximum value in BST if available, null otherwise.
+	 */
+	public Integer maxValue() {
+		return (root != null)? maxValue(root) : null;
+	}
+
+	private Integer maxValue(Node current) {
+		if (current.right == null) {
+			return current.data;
+		}
+		return maxValue(current.right);
+	}
+
+	/**
 	 * Checks if data is present in the BST.
 	 * @param data to be checked.
 	 * @return <code>true</code> if data is available in BST;
