@@ -35,3 +35,6 @@ Collection of common sorting, searching ,string manipulation and other algorithm
   15. pop
   16. length
   17. size
+
+2. Binary Search Tree (BST)
+  1. insertRecursively
