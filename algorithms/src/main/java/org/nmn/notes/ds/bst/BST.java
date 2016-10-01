@@ -159,13 +159,38 @@ public class BST {
 	}
 
 	/**
+	 * Print pre-order elements of the tree.
+	 * 
+	 * @return {@link ArrayList} of pre-order representation of tree.
+	 */
+	public ArrayList<Integer> printPreOrder() {
+		ArrayList<Integer> result = new ArrayList<Integer>(size);
+		System.out.print("PreOrder: ");
+		printPreOrder(root, result);
+		System.out.println();
+		return result;
+	}
+
+	private void printPreOrder(Node node, ArrayList<Integer> list) {
+		if (node == null) {
+			return;
+		}
+		System.out.print(node.data + " ");
+		list.add(node.data);
+		printPreOrder(node.left, list);
+		printPreOrder(node.right, list);
+	}
+
+	/**
 	 * Print in-order elements of the tree.
 	 * 
 	 * @return {@link ArrayList} of in-order representation of tree.
 	 */
 	public ArrayList<Integer> printInOrder() {
 		ArrayList<Integer> result = new ArrayList<Integer>(size);
+		System.out.print("InOrder: ");
 		printInOrder(root, result);
+		System.out.println();
 		return result;
 	}
 
@@ -177,6 +202,29 @@ public class BST {
 		System.out.print(node.data + " ");
 		list.add(node.data);
 		printInOrder(node.right, list);
+	}
+
+	/**
+	 * Print post-order elements of the tree.
+	 * 
+	 * @return {@link ArrayList} of post-order representation of tree.
+	 */
+	public ArrayList<Integer> printPostOrder() {
+		ArrayList<Integer> result = new ArrayList<Integer>(size);
+		System.out.print("PostOrder: ");
+		printPostOrder(root, result);
+		System.out.println();
+		return result;
+	}
+
+	private void printPostOrder(Node node, ArrayList<Integer> list) {
+		if (node == null) {
+			return;
+		}
+		printPostOrder(node.left, list);
+		printPostOrder(node.right, list);
+		System.out.print(node.data + " ");
+		list.add(node.data);
 	}
 
 	/**
