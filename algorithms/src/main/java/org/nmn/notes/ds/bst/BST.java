@@ -308,6 +308,67 @@ public class BST {
 	}
 
 	/**
+	 * Given a plain binary tree, examine the tree to determine if it meets the requirement to be a binary search tree.
+	 *  To be a binary search tree, for every node, all of the nodes in its left tree must be <= the node, 
+	 *  and all of the nodes in its right subtree must be > the node.
+	 * 
+	 * @return <code>true</code> if BST is a valid binary tree;
+	 * 		   <code>false</code> false otherwise.
+	 */
+	public boolean isBST() {
+		return isBST(root);
+	}
+
+	private boolean isBST(Node node) {
+		if (node == null) {
+			return true;
+		}
+
+		//Max value in left sub-tree should be equal or less than current node value.
+		if (node.left != null && maxValue(node.left) > node.data) {
+			return false;
+		}
+
+		//Min value in right sub-tree should be greater than current node value.
+		if (node.right != null && node.data >= minValue(node.right)) {
+			return false;
+		}
+
+		//recurse left and right sub-trees.
+		return isBST(node.left) & isBST(node.right);
+	}
+
+	/**
+	 * Version 1 above runs slowly since it traverses over some parts of the tree many times.
+	 * A better solution looks at each node only once. The trick is to  traverses down the tree keeping track of the 
+	 * narrowing min and max allowed values as it goes, looking at each node only once.
+	 * 
+	 * @return <code>true</code> if BST is a valid binary tree;
+	 * 		   <code>false</code> false otherwise.
+	 */
+	public boolean isBSTModified() {
+		return isBSTModified(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+	}
+
+	private boolean isBSTModified(Node node, int minValue, int maxValue) {
+		if (node == null) {
+			return true;
+		}
+
+		// condition at the current node fails.
+		if (node.data < minValue || node.data >= maxValue) {
+			return false;
+		}
+
+		/**
+		 * recurse over left and right sub-trees.
+		 * left sub-tree values can be at max the current node value. 
+		 * right sub-tree values can be at min the current node value.
+		 */ 
+		return isBSTModified(node.left, minValue, node.data) & isBSTModified(node.right, node.data, maxValue);
+	}
+
+	/**
 	 * Node of BST.
 	 */
 	private static class Node {

@@ -49,3 +49,6 @@ Collection of common sorting, searching ,string manipulation and other algorithm
   10. mirror
   11. doubleTree
   12. sameTree
+  13. isBST
+  14. isBSTModified
+  15. size

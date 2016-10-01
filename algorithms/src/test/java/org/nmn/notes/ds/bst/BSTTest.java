@@ -279,4 +279,57 @@ public class BSTTest {
 		bst2.insertIteratively(36);
 		assertFalse(BST.sameTree(bst1, bst2));
 	}
+
+	/**
+	 * Test if a given tree is a valid BST.
+	 */
+	@Test
+	public void testIsBST() {
+		BST bst = new BST();
+		assertTrue(bst.isBST());
+
+		bst.insertIteratively(5);
+		bst.insertIteratively(2);
+		bst.insertIteratively(8);
+		bst.insertIteratively(15);
+		bst.insertIteratively(25);
+		bst.insertIteratively(35);
+
+		assertTrue(bst.isBST());
+
+		//double tree should keep the BST intact.
+		bst.doubleTree();
+		assertTrue(bst.isBST());
+
+		//mirror a BST will no longer keep it a valid BST.
+		bst.mirror();
+		assertFalse(bst.isBST());
+	}
+
+	/**
+	 * Test if a given tree is a valid BST using modified logic where we keep track of the current min and max value
+	 * while traversing down the tree evaluating a node only once.
+	 */
+	@Test
+	public void testIsBSTModified() {
+		BST bst = new BST();
+		assertTrue(bst.isBST());
+
+		bst.insertIteratively(5);
+		bst.insertIteratively(2);
+		bst.insertIteratively(8);
+		bst.insertIteratively(15);
+		bst.insertIteratively(25);
+		bst.insertIteratively(35);
+
+		assertTrue(bst.isBSTModified());
+
+		//double tree should keep the BST intact.
+		bst.doubleTree();
+		assertTrue(bst.isBSTModified());
+
+		//mirror a BST will no longer keep it a valid BST.
+		bst.mirror();
+		assertFalse(bst.isBSTModified());
+	}
 }
