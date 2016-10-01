@@ -228,6 +228,61 @@ public class BST {
 	}
 
 	/**
+	 * Compute the number of nodes along the longest path from the root node down 
+	 * to the farthest leaf node. The maxDepth of the empty tree is 0.
+	 * 
+	 * @return maximum depth of the tree.
+	 */
+	public int maxDepth() {
+		return maxDepth(root, 0);
+	}
+
+	private int maxDepth(Node current, int depth) {
+		if (current == null) {
+			return depth;
+		}
+		return Math.max(maxDepth(current.left, depth + 1), maxDepth(current.right, depth + 1));
+	}
+
+	/**
+	 * Change a tree so that the roles of the left and right pointers are swapped at every node. 
+	 */
+	public void mirror() {
+		mirror(root);
+	}
+
+	private void mirror(Node node) {
+		if (node == null) {
+			return;
+		}
+		Node temp = node.left;
+		node.left = node.right;
+		node.right = temp;
+		mirror(node.left);
+		mirror(node.right);
+	}
+
+	/**
+	 * For each node in a binary search tree, create a new duplicate node, 
+	 * and insert the duplicate as the left child of the original node.
+	 */
+	public void doubleTree() {
+		doubleTree(root);
+	}
+
+	private void doubleTree(Node node) {
+		if (node == null) {
+			return;
+		}
+		doubleTree(node.left);
+		//insert duplicate node as left child.
+		Node newNode = new Node(node.data);
+		newNode.left = node.left;
+		node.left = newNode;
+		doubleTree(node.right);
+	}
+
+	/**
 	 * Node of BST.
 	 */
 	private static class Node {

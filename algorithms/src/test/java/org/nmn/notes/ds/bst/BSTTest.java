@@ -159,4 +159,91 @@ public class BSTTest {
 		expected.add(10);
 		assertEquals(actual, expected);
 	}
+
+	/**
+	 * Test maximum depth of BST.
+	 */
+	@Test
+	public void testMaxDepth() {
+		BST bst = new BST();
+		assertEquals(bst.maxDepth(), 0);
+		bst.insertIteratively(10);
+		assertEquals(bst.maxDepth(), 1);
+		bst.insertIteratively(20);
+		bst.insertIteratively(30);
+		bst.insertIteratively(15);
+		bst.insertIteratively(40);
+		bst.insertIteratively(50);
+		bst.insertIteratively(45);
+		bst.insertIteratively(60);
+		bst.insertIteratively(5);
+		bst.insertIteratively(2);
+		bst.insertIteratively(8);
+		assertEquals(bst.maxDepth(), 6);
+	}
+
+	/**
+	 * Test mirror of BST.
+	 */
+	@Test
+	public void testMirror() {
+		BST bst = new BST();
+		bst.insertIteratively(10);
+		bst.insertIteratively(15);
+		bst.insertIteratively(8);
+		bst.insertIteratively(12);
+		bst.insertIteratively(19);
+		ArrayList<Integer> actual = bst.printInOrder();
+		ArrayList<Integer> expected = new ArrayList<Integer>();
+		expected.add(8);
+		expected.add(10);
+		expected.add(12);
+		expected.add(15);
+		expected.add(19);
+		assertEquals(actual, expected);
+		bst.mirror();
+		actual = bst.printInOrder();
+		expected = new ArrayList<Integer>();
+		expected.add(19);
+		expected.add(15);
+		expected.add(12);
+		expected.add(10);
+		expected.add(8);
+		assertEquals(actual, expected);
+	}
+
+	/**
+	 * Test double tree of BST.
+	 */
+	@Test
+	public void testDoubleTree() {
+		BST bst = new BST();
+		bst.insertIteratively(10);
+		bst.insertIteratively(15);
+		bst.insertIteratively(8);
+		bst.insertIteratively(12);
+		bst.insertIteratively(19);
+		ArrayList<Integer> actual = bst.printInOrder();
+		ArrayList<Integer> expected = new ArrayList<Integer>();
+		expected.add(8);
+		expected.add(10);
+		expected.add(12);
+		expected.add(15);
+		expected.add(19);
+		assertEquals(actual, expected);
+		bst.doubleTree();
+		actual = bst.printInOrder();
+		expected = new ArrayList<Integer>();
+		expected.add(8);
+		expected.add(8);
+		expected.add(10);
+		expected.add(10);
+		expected.add(12);
+		expected.add(12);
+		expected.add(15);
+		expected.add(15);
+		expected.add(19);
+		expected.add(19);
+		assertEquals(actual, expected);
+	}
 }

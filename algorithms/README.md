@@ -45,3 +45,6 @@ Collection of common sorting, searching ,string manipulation and other algorithm
   6. printPreOrder
   7. printInOrder
   8. printPostOrder
+  9. maxDepth
+  10. mirror
+  11. doubleTree
