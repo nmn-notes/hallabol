@@ -1,6 +1,7 @@
 package org.nmn.notes.ds.bst;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Binary Search Tree.
@@ -304,7 +305,7 @@ public class BST {
 			return false;
 		}
 		//recursively call the routine on left and right child tree.
-		return sameTree(node1.left, node2.left) & sameTree(node1.right, node2.right);
+		return sameTree(node1.left, node2.left) && sameTree(node1.right, node2.right);
 	}
 
 	/**
@@ -335,7 +336,7 @@ public class BST {
 		}
 
 		//recurse left and right sub-trees.
-		return isBST(node.left) & isBST(node.right);
+		return isBST(node.left) && isBST(node.right);
 	}
 
 	/**
@@ -361,11 +362,37 @@ public class BST {
 		}
 
 		/**
-		 * recurse over left and right sub-trees.
+		 * Recurse over left and right sub-trees.
 		 * left sub-tree values can be at max the current node value. 
 		 * right sub-tree values can be at min the current node value.
 		 */ 
-		return isBSTModified(node.left, minValue, node.data) & isBSTModified(node.right, node.data, maxValue);
+		return isBSTModified(node.left, minValue, node.data + 1) && isBSTModified(node.right, node.data, maxValue);
+	}
+
+	/**
+	 * Print out all of BSTs root-to-leaf paths.
+	 * 
+	 * @return {@link List} of root-to-leaf paths; will pass empty {@link List} for empty tree.
+	 */
+	public List<String> printPaths() {
+		List<String> paths = new ArrayList<String>();
+		printPaths(root, "", paths);
+		return paths;
+	}
+
+	private void printPaths(Node current, String path, List<String> paths) {
+		if (current == null) {
+			return;
+		}
+		else if (current.left == null && current.right == null) {
+			final String rootToLeafPath = "Path:" + path + " " + current.data;
+			System.out.println(rootToLeafPath);
+			paths.add(rootToLeafPath);
+			return;
+		}
+
+		printPaths(current.left, path + " " + current.data, paths);
+		printPaths(current.right, path + " " + current.data, paths);
 	}
 
 	/**

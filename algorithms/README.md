@@ -51,4 +51,5 @@ Collection of common sorting, searching ,string manipulation and other algorithm
   12. sameTree
   13. isBST
   14. isBSTModified
+  15. printPaths
   15. size

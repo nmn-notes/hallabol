@@ -6,6 +6,7 @@ import static org.testng.Assert.assertNull;
 import static org.testng.Assert.assertTrue;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.testng.annotations.Test;
 
@@ -331,5 +332,32 @@ public class BSTTest {
 		//mirror a BST will no longer keep it a valid BST.
 		bst.mirror();
 		assertFalse(bst.isBSTModified());
+	}
+
+	/**
+	 * Test root-to-leaf paths of BST.
+	 */
+	@Test
+	public void testPrintPath() {
+		BST bst = new BST();
+		List<String> expected = new ArrayList<String>();
+		assertEquals(bst.printPaths(), expected);
+
+		bst.insertIteratively(5);
+		bst.insertIteratively(2);
+		bst.insertIteratively(8);
+		bst.insertIteratively(15);
+		bst.insertIteratively(25);
+		bst.insertIteratively(35);
+		bst.insertIteratively(3);
+		bst.insertIteratively(10);
+
+		expected = new ArrayList<String>();
+		expected.add("Path: 5 2 3");
+		expected.add("Path: 5 8 15 25 35");
+		expected.add("Path: 5 8 15 10");
+		List<String> actualPaths = bst.printPaths();
+		assertEquals(actualPaths.size(), expected.size());
+		assertTrue(actualPaths.containsAll(expected));
 	}
 }
