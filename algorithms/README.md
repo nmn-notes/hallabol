@@ -16,6 +16,11 @@ Collection of common sorting, searching ,string manipulation and other algorithm
 1. Naive recursive polynomial complexity
 2. Iterative linear complexity
 
+###String
+1. Palindrome
+2. Search
+3. String Manipulation
+
 ###Data Structures
 1. Singly LinkedList
   1. add
