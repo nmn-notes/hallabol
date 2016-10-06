@@ -1,5 +1,7 @@
 package org.nmn.notes.algorithms.string;
 
+import org.nmn.notes.util.StringUtils;
+
 /**
  * String manipulation algorithms.
  * 
@@ -33,7 +35,6 @@ public class StringManipulation {
 	 * The algorithm uses bitmap to store each character of {@link String}. Two bitmaps are used to store lower and
 	 * higher ascii characters.
 	 * 
-	 * 
 	 * @param str {@link String} containing only 0-128 ascii characters.
 	 * @return <code>true</code> if {@link String} has all unique characters;
 	 * 		   <code>false</code> otherwise.
@@ -63,6 +64,40 @@ public class StringManipulation {
 		return true;
 	}
 
+	/**
+	 * Checks if the given {@link String} has all unique characters.
+	 * This is also a linear algorithm with O(n) time complexity.
+	 * The algorithm uses bitmap to store each character of {@link String}. Two bitmaps are used to store lower and
+	 * higher ascii characters and instead of using a shift operation uses {@link Math} power operation.
+	 * 
+	 * @param str {@link String} containing only 0-128 ascii characters.
+	 * @return <code>true</code> if {@link String} has all unique characters;
+	 * 		   <code>false</code> otherwise.
+	 * @throws NullPointerException if str is null.
+	 */	
+	public static boolean hasUniqueCharsBitMap2(final String str) {
+		final char[] charArr = str.toCharArray();
+		long lowerRange = 0L;
+		long higherRange = 0L;
+
+		for (char c : charArr) {
+			if (c < 64) {
+				//duplicate character found
+				if ((lowerRange & ((long)Math.pow(2, c))) > 0) {
+					return false;
+				}
+				lowerRange = lowerRange | ((long)Math.pow(2, c));
+			}
+			else {
+				//duplicate character found
+				if ((higherRange & ((long)Math.pow(2, c % 64))) > 0) {
+					return false;
+				}
+				higherRange = higherRange | ((long)Math.pow(2, c % 64));
+			}
+		}
+		return true;
+	}
 	/**
 	 * Number of count of characters in a given {@link String}
 	 * 

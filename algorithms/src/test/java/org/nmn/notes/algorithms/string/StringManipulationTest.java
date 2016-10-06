@@ -39,6 +39,19 @@ public class StringManipulationTest {
 	}
 
 	/**
+	 * Test if a given {@link String} has all unique characters using a bit map.
+	 */
+	@Test
+	public void testHasUniqueCharsBitMap2() {
+		assertFalse(StringManipulation.hasUniqueCharsBitMap2("aa"));
+		assertTrue(StringManipulation.hasUniqueCharsBitMap2("a"));
+		assertTrue(StringManipulation.hasUniqueCharsBitMap2("abc"));
+		assertTrue(StringManipulation.hasUniqueCharsBitMap2("abcdefgh"));
+		assertFalse(StringManipulation.hasUniqueCharsBitMap2("abcadefgh"));
+		assertTrue(StringManipulation.hasUniqueCharsBitMap2("z:"));
+	}
+
+	/**
 	 * Test number of characters in a given {@link String}.
 	 */
 	@Test
