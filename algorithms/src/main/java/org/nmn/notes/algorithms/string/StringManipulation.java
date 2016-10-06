@@ -26,4 +26,58 @@ public class StringManipulation {
 		}
 		return true;
 	}
+
+	/**
+	 * Checks if the given {@link String} has all unique characters.
+	 * This is a linear algorithm with O(n) time complexity.
+	 * The algorithm uses bitmap to store each character of {@link String}. Two bitmaps are used to store lower and
+	 * higher ascii characters.
+	 * 
+	 * 
+	 * @param str {@link String} containing only 0-128 ascii characters.
+	 * @return <code>true</code> if {@link String} has all unique characters;
+	 * 		   <code>false</code> otherwise.
+	 * @throws NullPointerException if str is null.
+	 */	
+	public static boolean hasUniqueCharsBitMap1(final String str) {
+		final char[] charArr = str.toCharArray();
+		long lowerRange = 0L;
+		long higherRange = 0L;
+
+		for (char c : charArr) {
+			if (c < 64) {
+				//duplicate character found
+				if ((lowerRange & (1 << c)) > 0) {
+					return false;
+				}
+				lowerRange = lowerRange | (1 << c);
+			}
+			else {
+				//duplicate character found
+				if ((higherRange & (1 << c)) > 0) {
+					return false;
+				}
+				higherRange = higherRange | (1 << c);
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * Number of count of characters in a given {@link String}
+	 * 
+	 * @param str {@link String}.
+	 * @param c character to be searched in the {@link String}.
+	 * @return total number of search character found in the given {@link String}.
+	 */
+	public static int noOfChars(final String str, char c) {
+		int count = 0;
+		char[] arr = str.toCharArray();
+		for (char ch : arr) {
+			if (ch == c) {
+				count++;
+			}
+		}
+		return count;
+	}
 }
