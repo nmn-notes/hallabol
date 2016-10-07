@@ -10,5 +10,5 @@ public interface Constants {
 	/**
 	 * Empty string ""
 	 */
-	public String EMPTY_STRING = "";
+	public final String EMPTY_STRING = "";
 }

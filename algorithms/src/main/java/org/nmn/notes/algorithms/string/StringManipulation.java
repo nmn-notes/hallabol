@@ -48,17 +48,17 @@ public class StringManipulation {
 		for (char c : charArr) {
 			if (c < 64) {
 				//duplicate character found
-				if ((lowerRange & (1 << c)) > 0) {
+				if ((lowerRange & (1L << c)) > 0) {
 					return false;
 				}
-				lowerRange = lowerRange | (1 << c);
+				lowerRange = lowerRange | (1L << c);
 			}
 			else {
 				//duplicate character found
-				if ((higherRange & (1 << c)) > 0) {
+				if ((higherRange & (1L << c)) > 0) {
 					return false;
 				}
-				higherRange = higherRange | (1 << c);
+				higherRange = higherRange | (1L << c);
 			}
 		}
 		return true;
@@ -98,6 +98,67 @@ public class StringManipulation {
 		}
 		return true;
 	}
+
+	/**
+	 * Returns the length of longest substring which has all unique characters.
+	 * Only supports [a-zA-Z] {@link String}.
+	 * 
+	 * @str [a-zA-Z] {@link String}.
+	 * @return length of the substring which has all unique characters; -1 if String is null or empty.
+	 */
+	public static int lengthOfLongestSubstringWithUniqueChars(final String str) {
+		if (StringUtils.isBlankOrEmpty(str)) {
+			return -1;
+		}
+
+		long bitMap = 0L;
+		char[] charArr = str.toCharArray();
+		int maxLength = 0;
+		int length = 0;
+
+		for (char c : charArr) {
+			//duplicate character found, start a new substring.
+			if ((bitMap & (1L << c)) > 0) {
+				length = 0;
+				bitMap = 0L;
+			}
+			bitMap = bitMap | (1L << c);
+			length++;
+			//new longest sub-string found.
+			if (maxLength < length) {
+				maxLength = length;
+			}
+		}
+
+		return maxLength;
+	}
+
+	/**
+	 * Reverse a given {@link String}.
+	 * 
+	 * @param str {@link String} to be reversed.
+	 * @return reverse string.
+	 */
+	public static String reverseString(final String str) {
+		if (str == null || StringUtils.isBlankOrEmpty(str)) {
+			return str;
+		}
+
+		char [] charArr = str.toCharArray();
+		int p = 0;
+		int q = charArr.length - 1;
+
+		while (p < q) {
+			char temp = charArr[p];
+			charArr[p] = charArr[q];
+			charArr[q] = temp;
+			p++;
+			q--;
+		}
+
+		return String.valueOf(charArr);
+	}
+
 	/**
 	 * Number of count of characters in a given {@link String}
 	 * 

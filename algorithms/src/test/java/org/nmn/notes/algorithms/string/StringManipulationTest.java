@@ -3,6 +3,7 @@ package org.nmn.notes.algorithms.string;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNull;
 
 import org.testng.annotations.Test;
 
@@ -49,6 +50,39 @@ public class StringManipulationTest {
 		assertTrue(StringManipulation.hasUniqueCharsBitMap2("abcdefgh"));
 		assertFalse(StringManipulation.hasUniqueCharsBitMap2("abcadefgh"));
 		assertTrue(StringManipulation.hasUniqueCharsBitMap2("z:"));
+	}
+
+	/**
+	 * Test the length of longest substring with all unique characters.
+	 */
+	@Test
+	public void testlenghtOfLongestSubstringWithUniqueChars() {
+		assertEquals(StringManipulation.lengthOfLongestSubstringWithUniqueChars(null), -1);
+		assertEquals(StringManipulation.lengthOfLongestSubstringWithUniqueChars(""), -1);
+		assertEquals(StringManipulation.lengthOfLongestSubstringWithUniqueChars(" "), -1);
+		assertEquals(StringManipulation.lengthOfLongestSubstringWithUniqueChars("a"), 1);
+		assertEquals(StringManipulation.lengthOfLongestSubstringWithUniqueChars("aa"), 1);
+		assertEquals(StringManipulation.lengthOfLongestSubstringWithUniqueChars("aab"), 2);
+		assertEquals(StringManipulation.lengthOfLongestSubstringWithUniqueChars("aabb"), 2);
+		assertEquals(StringManipulation.lengthOfLongestSubstringWithUniqueChars("aabcdeefg"), 5);
+	}
+
+	/**
+	 * Test reversal of a {@link String}.
+	 */
+	@Test
+	public void testReverseString() {
+		assertNull(StringManipulation.reverseString(null));
+		assertEquals(StringManipulation.reverseString(""), "");
+		assertEquals(StringManipulation.reverseString("  "), "  ");
+		assertEquals(StringManipulation.reverseString("a"), "a");
+		assertEquals(StringManipulation.reverseString("ab"), "ba");
+		assertEquals(StringManipulation.reverseString("abc"), "cba");
+		assertEquals(StringManipulation.reverseString("abcd"), "dcba");
+		assertEquals(StringManipulation.reverseString("abcdefghijk"), "kjihgfedcba");
+		assertEquals(
+			StringManipulation.reverseString("abasadasdasdddar"), 
+			new StringBuilder("abasadasdasdddar").reverse().toString());
 	}
 
 	/**
