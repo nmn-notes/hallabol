@@ -20,6 +20,13 @@ Collection of common sorting, searching ,string manipulation and other algorithm
 1. Palindrome
 2. Search
 3. String Manipulation
+  1. hasUniqueChars
+  2. hasUniqueCharsBitMap1
+  3. hasUniqueCharsBitMap2
+  4. lengthOfLongestSubstringWithUniqueChars
+  5. reverseString
+  6. noOfChars
+  7. areAnagrams
 
 ###Data Structures
 1. Singly LinkedList

@@ -1,5 +1,9 @@
 package org.nmn.notes.algorithms.string;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.nmn.notes.util.StringUtils;
 
 /**
@@ -176,4 +180,31 @@ public class StringManipulation {
 		}
 		return count;
 	}
+
+	/**
+	 * Check if {@link String} s1 and {@link String} s2 are anagrams.
+	 * Anagrams are results of rearranging all the original letters of word or phrase exactly once.
+	 * This algorithm sorts given {@link String}s and compares the hashcode.
+	 * This algorithm has O(nlogn) complexity since it uses comparison sort to sort the given {@link String}s.
+	 * 
+	 * @param s1 1st {@link String}.
+	 * @param s2 2nd {@link String}
+	 * @return <code>true</code> if s1 and s2 are anagrams;
+	 * 		   <code>false</code> otherwise.
+	 * @throws Exception if any.
+	 */
+	public static boolean areAnagrams(final String s1, final String s2) {
+		if (s1 == null || s2 == null || s1.length() != s2.length()) {
+			return false;
+		}
+
+		char[] charArr1 = s1.toCharArray();
+		char[] charArr2 = s2.toCharArray();
+
+		Arrays.sort(charArr1);
+		Arrays.sort(charArr2);
+
+		return String.valueOf(charArr1).hashCode() == String.valueOf(charArr2).hashCode();
+	}
+
 }
