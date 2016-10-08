@@ -1,8 +1,6 @@
 package org.nmn.notes.algorithms.string;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.nmn.notes.util.StringUtils;
 
@@ -205,6 +203,53 @@ public class StringManipulation {
 		Arrays.sort(charArr2);
 
 		return String.valueOf(charArr1).hashCode() == String.valueOf(charArr2).hashCode();
+	}
+
+	/**
+	 * Check if {@link String} s1 and {@link String} s2 are anagrams.
+	 * This algorithm counts the total number of unique characters in {@link String} s1 and matches it with the total
+	 * number of unique characters found in {@link String} s2.
+	 * This algorithm has linear O(n) time complexity.
+	 * 
+	 * @param s1 1st {@link String}.
+	 * @param s2 2nd {@link String}
+	 * @return <code>true</code> if s1 and s2 are anagrams;
+	 * 		   <code>false</code> otherwise.
+	 * @throws Exception if any.
+	 */
+	public static boolean areAnagrams1(final String s1, final String s2) {
+		if (s1 == null || s2 == null || s1.length() != s2.length()) {
+			return false;
+		}
+
+		int[] letter = new int[256];
+		int numOfUniqChars = 0;
+		int numOfCompletedCharsInS2 = 0;
+
+		for (char c : s1.toCharArray()){
+			if (letter[c] == 0) {
+				//unique character found.
+				numOfUniqChars++;
+			}
+			letter[c]++;
+		}
+
+		for (int i = 0; i < s2.length(); i++) {
+			char d = s2.charAt(i);
+			if (letter[d] == 0) {
+				//character not found in s1, hence NOT an anagram.
+				return false;
+			}
+			letter[d]--;
+			if (letter[d] == 0) {
+				numOfCompletedCharsInS2++;
+				if (numOfUniqChars == numOfCompletedCharsInS2) {
+					//check if any character is left in s2.
+					return (i == s2.length() - 1);
+				}
+			}
+		}
+		return false;
 	}
 
 }

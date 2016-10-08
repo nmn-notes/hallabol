@@ -27,6 +27,7 @@ Collection of common sorting, searching ,string manipulation and other algorithm
   5. reverseString
   6. noOfChars
   7. areAnagrams
+  8. areAnagrams1
 
 ###Data Structures
 1. Singly LinkedList

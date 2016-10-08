@@ -109,4 +109,19 @@ public class StringManipulationTest {
 		assertTrue(StringManipulation.areAnagrams("hello", "olehl"));
 		assertFalse(StringManipulation.areAnagrams("hello", "helloa"));
 	}
+
+	/**
+	 * Test if two {@link String}'s are anagrams are not.
+	 */
+	@Test
+	public void testAreAnagrams1() {
+		assertFalse(StringManipulation.areAnagrams1(null, null));
+		assertFalse(StringManipulation.areAnagrams1(null, "abc"));
+		assertFalse(StringManipulation.areAnagrams1("abc", null));
+		assertTrue(StringManipulation.areAnagrams1("abc", "bca"));
+		assertTrue(StringManipulation.areAnagrams1("hello", "olehl"));
+		assertFalse(StringManipulation.areAnagrams1("hello", "helloa"));
+		assertFalse(StringManipulation.areAnagrams1("aabc", "aabca"));
+	}
+
 }
