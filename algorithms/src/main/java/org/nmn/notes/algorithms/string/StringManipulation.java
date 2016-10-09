@@ -1,8 +1,10 @@
 package org.nmn.notes.algorithms.string;
 
-import java.util.Arrays;
+import static org.nmn.notes.util.StringUtils.isBlankOrEmpty;
 
-import org.nmn.notes.util.StringUtils;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * String manipulation algorithms.
@@ -109,7 +111,7 @@ public class StringManipulation {
 	 * @return length of the substring which has all unique characters; -1 if String is null or empty.
 	 */
 	public static int lengthOfLongestSubstringWithUniqueChars(final String str) {
-		if (StringUtils.isBlankOrEmpty(str)) {
+		if (isBlankOrEmpty(str)) {
 			return -1;
 		}
 
@@ -142,7 +144,7 @@ public class StringManipulation {
 	 * @return reverse string.
 	 */
 	public static String reverseString(final String str) {
-		if (str == null || StringUtils.isBlankOrEmpty(str)) {
+		if (isBlankOrEmpty(str)) {
 			return str;
 		}
 
@@ -250,6 +252,100 @@ public class StringManipulation {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * Check if {@link String} s1 and {@link String} s2 are anagrams.
+	 * This algorithm stores unique characters in s1 in a frequencyMap and matches it with all unique characters in s2.
+	 * This algorithm also has linear O(n) time complexity.
+	 * 
+	 * @param s1 1st {@link String}.
+	 * @param s2 2nd {@link String}
+	 * @return <code>true</code> if s1 and s2 are anagrams;
+	 * 		   <code>false</code> otherwise.
+	 * @throws Exception if any.
+	 */
+	public static boolean areAnagrams2(final String s1, final String s2) {
+		if (isBlankOrEmpty(s1) || isBlankOrEmpty(s2) || s1.length() != s2.length()) {
+			return false;
+		}
+
+		Map<Character, Integer> charFrequencyMap = new HashMap<Character, Integer>();
+		for (char c : s1.toCharArray()) {
+			if (charFrequencyMap.containsKey(c)) {
+				charFrequencyMap.put(c, charFrequencyMap.get(c) + 1);
+			}
+			else {
+				charFrequencyMap.put(c, 1);
+			}
+		}
+
+		for (char d : s2.toCharArray()) {
+			//character NOT found in s1.
+			if (!charFrequencyMap.containsKey(d)) {
+				return false;
+			}
+			charFrequencyMap.put(d, charFrequencyMap.get(d) - 1);
+			//frequency of character in s2 is NOT matching in s1.
+			if (charFrequencyMap.get(d) < 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * Check if second string is formed by rotating the first string.
+	 * A string is a rotated version of other string only if it follows the same character sequence of other string.
+	 * For ex: abc, cab are rotated since they follow same character sequence. however abc, cba are not rotated.
+	 * 
+	 * @param s1 {@link String} first string.
+	 * @param s2 {@link String} to check if it rotated version of s1.
+	 * @return <code>true</code> if s2 is rotated version of s1;
+	 * 		   <code>false</code> otherwise.
+	 * @throws Exception if any.
+	 */
+	public static boolean isRotated(final String s1, final String s2) {
+		if (isBlankOrEmpty(s1) || isBlankOrEmpty(s2) || s1.length() != s2.length()) {
+			return false;
+		}
+
+		final String s1s1 = s1 + s1;
+		return s1s1.contains(s2);
+	}
+
+	/**
+	 * Modified algorithm to check if second string is formed by rotating the first string.
+	 * A string is a rotated version of other string only if it follows the same character sequence of other string.
+	 * For ex: abc, cab are rotated since they follow same character sequence. however abc, cba are not rotated.
+	 * 
+	 * @param s1 {@link String} first string.
+	 * @param s2 {@link String} to check if it rotated version of s1.
+	 * @return <code>true</code> if s2 is rotated version of s1;
+	 * 		   <code>false</code> otherwise.
+	 * @throws Exception if any.
+	 */
+	public static boolean isRotatedModified(final String s1, final String s2) {
+		if (isBlankOrEmpty(s1) || isBlankOrEmpty(s2) || s1.length() != s2.length()) {
+			return false;
+		}
+
+		final int length = s1.length();
+		boolean rotated = true;
+
+		for (int i = 0; i < length; i++) {
+			rotated = true;
+			for (int j = 0; j < length; j++) {
+				if (s1.charAt((i+j) % length) != s2.charAt(j)) {
+					rotated = false;
+					break;
+				}
+			}
+			if (rotated) {
+				return true;
+			}
+		}
+		return rotated;
 	}
 
 }

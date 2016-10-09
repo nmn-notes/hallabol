@@ -28,6 +28,8 @@ Collection of common sorting, searching ,string manipulation and other algorithm
   6. noOfChars
   7. areAnagrams
   8. areAnagrams1
+  9. isRotated
+ 10. isRotatedModified
 
 ###Data Structures
 1. Singly LinkedList
@@ -40,14 +42,14 @@ Collection of common sorting, searching ,string manipulation and other algorithm
   7. sortedInsert
   8. insertSort
   9. frontBackSplit
-  10. removeDuplicates
-  11. remove
-  12. removeLast
-  13. reverseRecursively
-  14. reverseIteratively
-  15. pop
-  16. length
-  17. size
+ 10. removeDuplicates
+ 11. remove
+ 12. removeLast
+ 13. reverseRecursively
+ 14. reverseIteratively
+ 15. pop
+ 16. length
+ 17. size
 
 2. Binary Search Tree (BST)
   1. insertRecursively
@@ -59,10 +61,10 @@ Collection of common sorting, searching ,string manipulation and other algorithm
   7. printInOrder
   8. printPostOrder
   9. maxDepth
-  10. mirror
-  11. doubleTree
-  12. sameTree
-  13. isBST
-  14. isBSTModified
-  15. printPaths
-  15. size
+ 10. mirror
+ 11. doubleTree
+ 12. sameTree
+ 13. isBST
+ 14. isBSTModified
+ 15. printPaths
+ 15. size

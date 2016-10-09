@@ -124,4 +124,41 @@ public class StringManipulationTest {
 		assertFalse(StringManipulation.areAnagrams1("aabc", "aabca"));
 	}
 
+	/**
+	 * Test if two {@link String}'s are anagrams are not.
+	 */
+	@Test
+	public void testAreAnagrams2() {
+		assertFalse(StringManipulation.areAnagrams2(null, null));
+		assertFalse(StringManipulation.areAnagrams2(null, "abc"));
+		assertFalse(StringManipulation.areAnagrams2("abc", null));
+		assertTrue(StringManipulation.areAnagrams2("abc", "bca"));
+		assertTrue(StringManipulation.areAnagrams2("hello", "olehl"));
+		assertFalse(StringManipulation.areAnagrams2("hello", "helloa"));
+		assertFalse(StringManipulation.areAnagrams1("aabc", "aabca"));
+	}
+
+	/**
+	 * Check if second string is a rotated version of first string. To be a rotated version, the second string
+	 * should follow the same character sequence of s1.
+	 */
+	@Test
+	public void testIsRotated() {
+		assertTrue(StringManipulation.isRotated("abc", "cab"));
+		assertTrue(StringManipulation.isRotated("abc", "abc"));
+		assertFalse(StringManipulation.isRotated("abc", "cba"));
+		assertTrue(StringManipulation.isRotated("aabbcc", "bbccaa"));
+	}
+
+	/**
+	 * Check if second string is a rotated version of first string using modified algorithm. 
+	 * To be a rotated version, the second string should follow the same character sequence of s1.
+	 */
+	@Test
+	public void testIsRotatedModified() {
+		assertTrue(StringManipulation.isRotatedModified("abc", "cab"));
+		assertTrue(StringManipulation.isRotatedModified("abc", "abc"));
+		assertFalse(StringManipulation.isRotatedModified("abc", "cba"));
+		assertTrue(StringManipulation.isRotatedModified("aabbcc", "bbccaa"));
+	}
 }
