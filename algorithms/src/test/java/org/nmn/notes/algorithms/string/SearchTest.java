@@ -31,5 +31,8 @@ public class SearchTest {
 	@Test
 	public void testContains() {
 		assertTrue(Search.contains("abcdef", "ef"));
+		assertTrue(Search.contains("abcdef", "cdef"));
+		assertTrue(Search.contains("abcdef", "abcdef"));
+		assertFalse(Search.contains("abcdef", "cdeg"));
 	}
 }
