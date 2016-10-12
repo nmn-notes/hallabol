@@ -5,7 +5,7 @@ import static org.testng.Assert.assertEquals;
 import org.testng.annotations.Test;
 
 /**
- * Test client for {@link Fibonacci}
+ * Test client for {@link Fibonacci}.
  * 
  * @author nmn-notes
  */
