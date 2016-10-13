@@ -18,6 +18,7 @@ Collection of common sorting, searching ,string manipulation and other algorithm
 
 ###Subsequence
 1. maxSubsequence
+2. minSubsequence
 
 ###String
 1. Palindrome

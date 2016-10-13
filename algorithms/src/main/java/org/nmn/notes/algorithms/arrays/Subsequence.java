@@ -28,4 +28,29 @@ public class Subsequence {
 		}
 		return maxSum;
 	}
+
+	/**
+	 * Find the minimum sum of subsequence in the given array.
+	 * For ex: 1 2 -10 5 -20 6 7 has a minimum subsequence of -10 + 5 -20 = 25
+	 * @param arr array of integer.
+	 * @return sum of minimum subsequence.
+	 */
+	public static int minSubsequence(int [] arr) {
+		int minSum = arr[0];
+		int sum = arr[0];
+
+		for (int i = 1; i < arr.length; i++) {
+			sum += arr[i];
+			if (arr[i] < sum) {
+				sum = arr[i];
+			}
+			if (minSum > sum) {
+				minSum = sum;
+			}
+			if (sum > 0) {
+				sum = 0;
+			}
+		}
+		return minSum;
+	}
 }
