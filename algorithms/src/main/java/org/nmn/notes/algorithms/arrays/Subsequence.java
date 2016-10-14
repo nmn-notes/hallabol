@@ -1,5 +1,10 @@
 package org.nmn.notes.algorithms.arrays;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.nmn.notes.algorithms.sorting.QuickSort;
+
 /**
  * Subsequence algorithms.
  * 
@@ -53,4 +58,42 @@ public class Subsequence {
 		}
 		return minSum;
 	}
+
+	/**
+	 * Find if given array has required sum or not.
+	 * Given an integer array, find two integers whose addition is equal to
+	 * required sum, if no such integers exists, return empty list.
+	 * 
+	 * @param arr integer array.
+	 * @param sum required sum.
+	 * @return {@link List} containing two {@link Integer}'s whose sum is 
+	 * equal to the required sum; if no such integers exist, the list will be empty.
+	 */
+	public static  List<Integer> getSum(int [] arr, int sum) {
+		ArrayList<Integer> result = new ArrayList<>();
+		if (arr.length < 2) {
+			return result;
+		}
+
+		QuickSort.sort(arr);
+		int begin = 0;
+		int end = arr.length - 1;
+
+		while (begin < end) {
+			int currentSum = arr[begin] + arr[end];
+			if (currentSum == sum) {
+				result.add(arr[begin]);
+				result.add(arr[end]);
+				break;
+			}
+			else if (currentSum < sum) {
+				begin++;
+			}
+			else {
+				end--;
+			}
+		}
+		return result;
+	}
+
 }

@@ -1,6 +1,10 @@
 package org.nmn.notes.algorithms.arrays;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.testng.annotations.Test;
 
@@ -34,5 +38,19 @@ public class SubsequenceTest {
 		assertEquals(Subsequence.minSubsequence(new int[] {5, 6, -13, 3, -2, 5}), -13);
 		assertEquals(Subsequence.minSubsequence(new int[] {5, 6, -13, 3, -6, 5}), -16);
 		assertEquals(Subsequence.minSubsequence(new int[] {5, -6, -13, -20}), -39);
+	}
+
+	/**
+	 * Test if given array has required sum.
+	 */
+	@Test
+	public void testGetSum() {
+		assertTrue(Subsequence.getSum(new int [] {15}, 15).isEmpty());
+		assertTrue(Subsequence.getSum(new int [] {30, 20, 10}, 15).isEmpty());
+
+		List<Integer> expected = new ArrayList<>();
+		expected.add(10);
+		expected.add(20);
+		assertEquals(Subsequence.getSum(new int [] {30, 20, 10, 40, 60}, 30), expected);
 	}
 }
