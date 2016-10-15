@@ -20,7 +20,8 @@ Collection of common sorting, searching ,string manipulation and other algorithm
 1. maxSubsequence
 2. minSubsequence
 3. getSumBruteForce
-4. getSum
+4. getSumTwoPointer
+5. getSumBinarySearch
 
 ###String
 1. Palindrome

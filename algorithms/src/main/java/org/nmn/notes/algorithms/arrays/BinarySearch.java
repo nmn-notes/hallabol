@@ -49,7 +49,17 @@ public class BinarySearch {
 		return searchRecursively(arr, element, 0, arr.length - 1);
 	}
 
-	private static int searchRecursively(int [] arr, int element, int begin, int end) {
+	/**
+	 * Does recursive binary search of the element in the passed integer array.
+	 * Search complexity is O(log(N))
+	 * @param arr integer array.
+	 * @param element to be search in the integer array.
+	 * @param begin index of the array.
+	 * @param end index of the array.
+	 * @return index of the element in the integer array if found;
+	 * else -1.
+	 */
+	public static int searchRecursively(int [] arr, int element, int begin, int end) {
 		if (begin > end) {
 			return -1;
 		}

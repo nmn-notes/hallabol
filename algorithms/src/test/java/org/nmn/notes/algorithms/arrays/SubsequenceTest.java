@@ -56,17 +56,32 @@ public class SubsequenceTest {
 	}
 
 	/**
-	 * Test if given array has required sum.
+	 * Test if given array has required sum using two pointer approach.
 	 */
 	@Test
-	public void testGetSum() {
-		assertTrue(Subsequence.getSum(new int [] {15}, 15).isEmpty());
-		assertTrue(Subsequence.getSum(new int [] {30, 20, 10}, 15).isEmpty());
+	public void testGetSumTwoPointer() {
+		assertTrue(Subsequence.getSumTwoPointer(new int [] {15}, 15).isEmpty());
+		assertTrue(Subsequence.getSumTwoPointer(new int [] {30, 20, 10}, 15).isEmpty());
 
 		List<Integer> expected = new ArrayList<>();
 		expected.add(10);
 		expected.add(20);
-		assertEquals(Subsequence.getSum(new int [] {30, 20, 10, 40, 60}, 30), expected);
-		assertTrue(Subsequence.getSum(new int [] {10, 20, 40}, 80).isEmpty());
+		assertEquals(Subsequence.getSumTwoPointer(new int [] {30, 20, 10, 40, 60}, 30), expected);
+		assertTrue(Subsequence.getSumTwoPointer(new int [] {10, 20, 40}, 80).isEmpty());
+	}
+
+	/**
+	 * Test if given array has required sum using binary search approach.
+	 */
+	@Test
+	public void testGetSumBinarySearch() {
+		assertTrue(Subsequence.getSumBinarySearch(new int [] {15}, 15).isEmpty());
+		assertTrue(Subsequence.getSumBinarySearch(new int [] {30, 20, 10}, 15).isEmpty());
+
+		List<Integer> expected = new ArrayList<>();
+		expected.add(10);
+		expected.add(20);
+		assertEquals(Subsequence.getSumBinarySearch(new int [] {30, 20, 10, 40, 60}, 30), expected);
+		assertTrue(Subsequence.getSumBinarySearch(new int [] {10, 20, 40}, 80).isEmpty());
 	}
 }

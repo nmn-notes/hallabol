@@ -102,7 +102,7 @@ public class Subsequence {
 	 * @return {@link List} containing two {@link Integer}'s whose sum is 
 	 * equal to the required sum; if no such integers exist, the list will be empty.
 	 */
-	public static  List<Integer> getSum(int [] arr, int sum) {
+	public static  List<Integer> getSumTwoPointer(int [] arr, int sum) {
 		ArrayList<Integer> result = new ArrayList<>();
 		if (arr.length < 2) {
 			return result;
@@ -129,4 +129,34 @@ public class Subsequence {
 		return result;
 	}
 
+	/**
+	 * Find if given array has required sum or not.
+	 * Given an integer array, find two integers whose addition is equal to
+	 * required sum, if no such integers exists, return empty list.
+	 * 
+	 * The algorithm first sorts the given array; while traversing the array the algorithm check if the required
+	 * remaining sum is available in the remaining array using {@link BinarySearch}.
+	 * 
+	 * @param arr integer array.
+	 * @param sum required sum.
+	 * @return {@link List} containing two {@link Integer}'s whose sum is 
+	 * equal to the required sum; if no such integers exist, the list will be empty.
+	 */
+	public static  List<Integer> getSumBinarySearch(int [] arr, int sum) {
+		ArrayList<Integer> result = new ArrayList<>();
+		if (arr.length < 2) {
+			return result;
+		}
+
+		QuickSort.sort(arr);
+		for (int i = 0; i < arr.length - 1; i++) {
+			int requiredSum = sum - arr[i];
+			if (BinarySearch.searchRecursively(arr, requiredSum , i + 1, arr.length - 1) != -1) {
+				result.add(arr[i]);
+				result.add(requiredSum);
+				return result;
+			}
+		}
+		return result;
+	}
 }
