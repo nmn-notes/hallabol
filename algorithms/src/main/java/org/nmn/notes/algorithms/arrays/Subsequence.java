@@ -64,6 +64,39 @@ public class Subsequence {
 	 * Given an integer array, find two integers whose addition is equal to
 	 * required sum, if no such integers exists, return empty list.
 	 * 
+	 * This is a brute-force algorithm and has O(n^2) time complexity.
+	 * 
+	 * @param arr integer array.
+	 * @param sum required sum.
+	 * @return {@link List} containing two {@link Integer}'s whose sum is 
+	 * equal to the required sum; if no such integers exist, the list will be empty.
+	 */
+	public static  List<Integer> getSumBruteForce(int [] arr, int sum) {
+		ArrayList<Integer> result = new ArrayList<>();
+		if (arr.length < 2) {
+			return result;
+		}
+
+		for (int i = 0; i < arr.length-1; i++) {
+			for (int j = i+1; j < arr.length; j++) {
+				if (arr[i] + arr[j] == sum) {
+					result.add(arr[i]);
+					result.add(arr[j]);
+					return result;
+				}
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * Find if given array has required sum or not.
+	 * Given an integer array, find two integers whose addition is equal to
+	 * required sum, if no such integers exists, return empty list.
+	 * 
+	 * The algorithm first sorts the given array and later finds the required sum; the complexity to search the sum
+	 * is linear O(n) along with O(nlogn) time complexity to sort the array.
+	 * 
 	 * @param arr integer array.
 	 * @param sum required sum.
 	 * @return {@link List} containing two {@link Integer}'s whose sum is 

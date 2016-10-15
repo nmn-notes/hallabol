@@ -41,6 +41,21 @@ public class SubsequenceTest {
 	}
 
 	/**
+	 * Test if given array has required sum using brute force.
+	 */
+	@Test
+	public void testGetSumBruteForce() {
+		assertTrue(Subsequence.getSumBruteForce(new int [] {15}, 15).isEmpty());
+		assertTrue(Subsequence.getSumBruteForce(new int [] {30, 20, 10}, 15).isEmpty());
+
+		List<Integer> expected = new ArrayList<>();
+		expected.add(20);
+		expected.add(10);
+		assertEquals(Subsequence.getSumBruteForce(new int [] {30, 20, 10, 40, 60}, 30), expected);
+		assertTrue(Subsequence.getSumBruteForce(new int [] {10, 20, 40}, 80).isEmpty());
+	}
+
+	/**
 	 * Test if given array has required sum.
 	 */
 	@Test
@@ -52,5 +67,6 @@ public class SubsequenceTest {
 		expected.add(10);
 		expected.add(20);
 		assertEquals(Subsequence.getSum(new int [] {30, 20, 10, 40, 60}, 30), expected);
+		assertTrue(Subsequence.getSum(new int [] {10, 20, 40}, 80).isEmpty());
 	}
 }
