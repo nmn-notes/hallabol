@@ -23,6 +23,9 @@ Collection of common sorting, searching ,string manipulation and other algorithm
 4. getSumTwoPointer
 5. getSumBinarySearch
 
+###Dynamic Programming
+1. Knapsack
+
 ###String
 1. Palindrome
 2. Search
