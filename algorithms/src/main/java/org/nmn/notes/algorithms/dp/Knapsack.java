@@ -18,10 +18,16 @@ public class Knapsack {
 	 * 
 	 *  To decide whether this item should be included or not depends on the maximum value that can be obtained 
 	 * This recursive algorithm has exponential time complexity O(2^n).
+	 * 
+	 * @param W Knapsack capacity.
+	 * @param wt weight integer array.
+	 * @param val value integer array.
+	 * @param numOfWts total number of weights to be considered.
+	 * @return maximum value of the knapsack.
 	 */
-	public static int knapsack(int W, int [] wt, int [] val, int currIndex) {
-		//Base case, when all elements are analyzed or no capacity left in knapsack.
-		if (currIndex >= wt.length || W <= 0) {
+	public static int knapsack(int W, int [] wt, int [] val, int numOfWts) {
+		//Base case, when no more elements are left or knapsack does not have any capacity.
+		if (numOfWts == 0 || W <= 0) {
 			return 0;
 		}
 
@@ -29,8 +35,8 @@ public class Knapsack {
 		 * If weight of the current item is more than the knapsack capacity W, this item
 		 * cannot be included in the sack, hence moving forwared to next index. 
 		 */
-		if (wt[currIndex] > W) {
-			return knapsack(W, wt, val, currIndex + 1);
+		if (wt[numOfWts - 1] > W) {
+			return knapsack(W, wt, val, numOfWts - 1);
 		}
 
 		/**
@@ -43,8 +49,8 @@ public class Knapsack {
 		 * Finally, pick whichever choice returns higher value.
 		 */
 		return Math.max(
-			(val[currIndex] + knapsack(W - wt[currIndex], wt, val, currIndex + 1)),
-			knapsack(W, wt, val, currIndex + 1)
+			(val[numOfWts - 1] + knapsack(W - wt[numOfWts - 1], wt, val, numOfWts - 1)),
+			knapsack(W, wt, val, numOfWts - 1)
 		);
 	}
 }
