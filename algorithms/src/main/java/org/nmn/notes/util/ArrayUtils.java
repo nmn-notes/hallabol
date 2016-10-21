@@ -38,4 +38,19 @@ public final class ArrayUtils {
 		return arr;
 	}
 
+	/**
+	 * Returns the maximum element in the array.
+	 * 
+	 * @param arr and integer array.
+	 * @return maximum element in the array.
+	 */
+	public static int max(int [] arr) {
+		int max = Integer.MIN_VALUE;
+		for (int element : arr) {
+			if (element > max) {
+				max = element;
+			}
+		}
+		return max;
+	}
 }
