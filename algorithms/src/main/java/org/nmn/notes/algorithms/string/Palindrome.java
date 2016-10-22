@@ -9,6 +9,7 @@ import static org.nmn.notes.util.StringUtils.isBlankOrEmpty;
  * Ex. palindromes: abcdcba and abccba, 
  * whereas abcdba is not a palidrome since a matches a, b matches b but c does not match d.
  * 
+ * @see org.nmn.notes.algorithms.dp.Palindrome for DP solution.
  * @author nmn-notes
  */
 public class Palindrome {
@@ -42,8 +43,8 @@ public class Palindrome {
 	/**
 	 * Get the length of maximum palindrome available in the string.
 	 * 
-	 * @param str String
-	 * @return length of palindrome.
+	 * @param str String.
+	 * @return length of substring which is a palindrome.
 	 */
 	public static int maxPalindromeLengthBruteForce(final String str) {
 		return maxPalindromeLengthBruteForce(str, 0, str.length() - 1);
@@ -63,6 +64,11 @@ public class Palindrome {
 	 * the two recursive calls are going to be:
 	 * 1. string "abc"
 	 * 2. string "bcb"
+	 * 
+	 * @param str String.
+	 * @param start index of the substring.
+	 * @param end index of the substring.
+	 * @return length of the longest substring which is a palindrome.
 	 */
 	private static int maxPalindromeLengthBruteForce(final String str, int start, int end) {
 		//Condition to break recursion
@@ -75,11 +81,13 @@ public class Palindrome {
 
 		//Check if string is palindrome
 		while (i <= j) {
-			//If string is not palindrome, make two recursive calls on sub-strings
+			//If string is not palindrome, make two recursive calls on left and right substrings.
 			if(str.charAt(i) != str.charAt(j)) {
-				//recursive call to diverge the scope
+				//recursive call to diverge the scope and return the largest palindrome of left and right substring.
 				return Math.max(
+					//check if left substring start, end - 1 is a substring.
 					maxPalindromeLengthBruteForce(str, start, end - 1),
+					//check if right substring start + 1, end is a substring.
 					maxPalindromeLengthBruteForce(str, start + 1, end));
 			}
 			i++;
