@@ -25,6 +25,8 @@ Collection of common sorting, searching ,string manipulation and other algorithm
 
 ###Dynamic Programming
 1. Knapsack
+ 1. recursive
+ 2. DP
 
 ###String
 1. Palindrome
