@@ -43,5 +43,10 @@ public class KnapsackTest {
 
 		//wt-1 val-50, wt-5 val-20
 		assertEquals(Knapsack.knapsackDP(6, wt, val), 70);
+
+		wt = new int [] {1, 1, 1, 1, 1};
+		val = new int [] {1, 1, 1, 1, 1};
+
+		assertEquals(Knapsack.knapsackDP(5, wt, val), 5);
 	}
 }

@@ -94,4 +94,5 @@ public class Knapsack {
 		//Finally return the value from table when all items and total knapsack capacity is considered.
 		return K[wt.length][W];
 	}
+
 }

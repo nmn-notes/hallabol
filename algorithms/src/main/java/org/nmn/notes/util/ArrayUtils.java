@@ -41,7 +41,7 @@ public final class ArrayUtils {
 	/**
 	 * Returns the maximum element in the array.
 	 * 
-	 * @param arr and integer array.
+	 * @param arr an integer array.
 	 * @return maximum element in the array.
 	 */
 	public static int max(int [] arr) {
@@ -52,5 +52,19 @@ public final class ArrayUtils {
 			}
 		}
 		return max;
+	}
+
+	/**
+	 * Returns sum of the array.
+	 * 
+	 * @param arr an integer array.
+	 * @return sum of the array.
+	 */
+	public static int sum(int [] arr) {
+		int sum = 0;
+		for (int i : arr) {
+			sum += i;
+		}
+		return sum;
 	}
 }
