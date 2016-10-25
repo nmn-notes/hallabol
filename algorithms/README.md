@@ -30,6 +30,9 @@ Collection of common sorting, searching ,string manipulation and other algorithm
 
 ###String
 1. Palindrome
+ 1. isPalidrome
+ 3. hasPalindrome
+ 4. maxPalindromeLengthBruteForce
 2. Search
 3. String Manipulation
   1. hasUniqueChars

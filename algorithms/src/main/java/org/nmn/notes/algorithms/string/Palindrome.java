@@ -39,6 +39,47 @@ public class Palindrome {
 		return true;
 	}
 
+	/**
+	 * Check if given string from start index to end index is a palindrome or not.
+	 * 
+	 * @param str String
+	 * @param start index of the string.
+	 * @param end index of the string.
+	 * @return <code>true</code> if palidrome;
+	 * 		   <code>false</code> otherwise
+	 */
+	public static boolean isPalindrome(final String str, int start, int end) {
+		if (start > end) {
+			return false;
+		}
+		while (start < end) {
+			if (str.charAt(start) != str.charAt(end)) {
+				return false;
+			}
+			start++;
+			end--;
+		}
+		return true;
+	}
+
+	/**
+	 * Returns length of the substring which is a palindrome.
+	 * This brute force approach checks if any substring is a palindrome and returns its length if found one.
+	 * 
+	 * @param str String.
+	 * @return length of the substring which is a palindrome; in worst case it will return 1 since a single character
+	 * is also a palindrome.
+	 */
+	public static int hasPalindrome(final String str) {
+		for (int i = 0; i < str.length() - 1; i++) {
+			for (int j = str.length() - 1; j > i + 1; j--) {
+				if (isPalindrome(str, i, j)) {
+					return j - i + 1;
+				}
+			}
+		}
+		return 1;
+	}
 
 	/**
 	 * Get the length of maximum palindrome available in the string.
