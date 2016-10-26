@@ -13,7 +13,6 @@ import static org.nmn.notes.util.StringUtils.isBlankOrEmpty;
  * @author nmn-notes
  */
 public class Palindrome {
-
 	/**
 	 * Check if given string is a palindrome or not.
 	 * 
@@ -35,12 +34,11 @@ public class Palindrome {
 			start++;
 			end--;
 		}
-
 		return true;
 	}
 
 	/**
-	 * Check if given string from start index to end index is a palindrome or not.
+	 * Check if a given string from start index to end index is a palindrome or not.
 	 * 
 	 * @param str String
 	 * @param start index of the string.
@@ -119,7 +117,6 @@ public class Palindrome {
 
 		int i = start;
 		int j = end;
-
 		//Check if string is palindrome
 		while (i <= j) {
 			//If string is not palindrome, make two recursive calls on left and right substrings.
@@ -134,7 +131,6 @@ public class Palindrome {
 			i++;
 			j--;
 		}
-
 		return (end - start) + 1;
 	}
 }

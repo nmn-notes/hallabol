@@ -55,6 +55,24 @@ public final class ArrayUtils {
 	}
 
 	/**
+	 * Returns the maximum element in the array.
+	 * 
+	 * @param arr an integer array.
+	 * @return maximum element in the array.
+	 */
+	public static int max(int [][] arr) {
+		int max = Integer.MIN_VALUE;
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				if (max < arr[i][j]){
+					max = arr[i][j];
+				}
+			}
+		}
+		return max;
+	}
+
+	/**
 	 * Returns sum of the array.
 	 * 
 	 * @param arr an integer array.
