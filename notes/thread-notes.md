@@ -12,3 +12,6 @@
 
 ###Why wait(), notify() and notifyAll() must be called from synchronized block or method in Java?
 To avoid race condition, if T1 has checked on some condition and decided to wait, context-switch happens and T2 satisfies the condition and issues notify() which is unheard by T1 since it is not yet waiting, hence T1 will miss this notification and will still go in wait(). In short, before waiting lock must be acquired so that no one else should be able to notify before it starts waiting and hence it wont miss the notification signal.
+
+###Why Should I not call sleep()/yield() method on any other Thread?
+Because it is error prone and can cause deadlock, if one Thread asks another thread to go to sleep, it wont release the lock and if the thread which is going to resume it needs the lock held by sleeping thread then there is a dead lock (not really, sleep do not sleep indefinitely like Suspend and do not need notification to wake up ). Same reason with Suspend. ?
