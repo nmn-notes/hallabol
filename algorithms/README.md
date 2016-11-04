@@ -27,6 +27,7 @@ Collection of common sorting, searching ,string manipulation and other algorithm
 1. Knapsack
  1. recursive
  2. DP
+2. Palindrome
 
 ###String
 1. Palindrome
