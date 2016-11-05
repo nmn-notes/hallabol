@@ -28,6 +28,7 @@ Collection of common sorting, searching ,string manipulation and other algorithm
  1. recursive
  2. DP
 2. Palindrome
+3. CoinCount
 
 ###String
 1. Palindrome
