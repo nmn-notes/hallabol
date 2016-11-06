@@ -1,22 +1,22 @@
 Collection of common sorting, searching ,string manipulation and other algorithms
 
 ###Sorting Algorithms:
-1. Bubble sort
-2. Insertion sort
-3. Selection sort
-4. Merge sort
-5. Quick sort
-6. Heap sort
+1. [Bubble sort](src/main/java/org/nmn/notes/algorithms/sorting/BubbleSort.java)
+2. [Insertion sort](src/main/java/org/nmn/notes/algorithms/sorting/InsertionSort.java)
+3. [Selection sort](src/main/java/org/nmn/notes/algorithms/sorting/SelectionSort.java)
+4. [Merge sort](src/main/java/org/nmn/notes/algorithms/sorting/MergeSort.java)
+5. [Quick sort](src/main/java/org/nmn/notes/algorithms/sorting/QuickSort.java)
+6. [Heap sort](src/main/java/org/nmn/notes/algorithms/sorting/HeapSort.java)
 
-###Binary Search
+###[Binary Search](src/main/java/org/nmn/notes/algorithms/arrays/BinarySearch.java)
 1. Iteratively
 2. Recursively
 
-###Fibonacci
+###[Fibonacci](src/main/java/org/nmn/notes/algorithms/arrays/Fibonacci.java)
 1. Naive recursive polynomial complexity
 2. Iterative linear complexity
 
-###Subsequence
+###[Subsequence](src/main/java/org/nmn/notes/algorithms/arrays/Subsequence.java)
 1. maxSubsequence
 2. minSubsequence
 3. getSumBruteForce
@@ -24,19 +24,19 @@ Collection of common sorting, searching ,string manipulation and other algorithm
 5. getSumBinarySearch
 
 ###Dynamic Programming
-1. Knapsack
+1. [Knapsack](src/main/java/org/nmn/notes/algorithms/dp/Knapsack.java)
  1. recursive
  2. DP
-2. Palindrome
-3. CoinCount
+2. [Palindrome](src/main/java/org/nmn/notes/algorithms/dp/Palindrome.java)
+3. [CoinCount](src/main/java/org/nmn/notes/algorithms/dp/CoinChange.java)
 
 ###String
-1. Palindrome
+1. [Palindrome](src/main/java/org/nmn/notes/algorithms/string/Palindrome.java)
  1. isPalidrome
  3. hasPalindrome
  4. maxPalindromeLengthBruteForce
-2. Search
-3. String Manipulation
+2. [Search](src/main/java/org/nmn/notes/algorithms/string/Search.java)
+3. [String Manipulation](src/main/java/org/nmn/notes/algorithms/string/StringManipulation.java)
   1. hasUniqueChars
   2. hasUniqueCharsBitMap1
   3. hasUniqueCharsBitMap2
@@ -49,7 +49,7 @@ Collection of common sorting, searching ,string manipulation and other algorithm
  10. isRotatedModified
 
 ###Data Structures
-1. Singly LinkedList
+1. [Singly LinkedList](src/main/java/org/nmn/notes/ds/linkedlist/SinglyLinkedList.java)
   1. add
   2. addFirst
   3. count
@@ -68,7 +68,7 @@ Collection of common sorting, searching ,string manipulation and other algorithm
  16. length
  17. size
 
-2. Binary Search Tree (BST)
+2. [Binary Search Tree (BST)](src/main/java/org/nmn/notes/ds/bst/BST.java)
   1. insertRecursively
   2. insertIteratively
   3. minValue
