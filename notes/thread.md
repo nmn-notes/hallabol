@@ -15,3 +15,11 @@ To avoid race condition, if T1 has checked on some condition and decided to wait
 
 ###Why Should I not call sleep()/yield() method on any other Thread?
 Because it is error prone and can cause deadlock, if one Thread asks another thread to go to sleep, it wont release the lock and if the thread which is going to resume it needs the lock held by sleeping thread then there is a dead lock (not really, sleep do not sleep indefinitely like Suspend and do not need notification to wake up ). Same reason with Suspend. ?
+
+###How can we achieve thread safety in Java?
+1. Synchronization
+2. Atomic Classes
+3. Immutable Classes
+4. Lock Interface
+5. Volatile
+6. Thread safe classes
