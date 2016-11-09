@@ -23,3 +23,6 @@ Because it is error prone and can cause deadlock, if one Thread asks another thr
 4. Lock Interface
 5. Volatile
 6. Thread safe classes
+
+###What happens when exception occurs in Thread?
+If not caught thread will die, if an uncaught exception handler is registered then it will get a callback. JVM will query the thread for its uncaughtexception handler using Thread.getUnCaughtExceptionHandler() and will invoke the handler’s uncaughtException(), passing thread and the exception as arguments.
