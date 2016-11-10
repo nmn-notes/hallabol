@@ -52,6 +52,19 @@ public class CoinChange {
 	/**
 	 * Use DP approach to get the number of ways we can make change for value n.
 	 * 
+	 * This DP approach will use lookup table and build it bottom UP.
+	 * 
+	 * @param C array of valued coins.
+	 * @param n value for which change is calculated.
+	 * @return the count of number of ways change can be made.
+	 */
+	public static int countDP(int [] C, int n) {
+		return -1;
+	}
+
+	/**
+	 * Use DP approach to get the number of ways we can make change for value n.
+	 * 
 	 * This DP approach will use lookup table to first calculate and store number of ways change can be with with 1st coin,
 	 * and update the number of ways change is made with introduction of a new coin.
 	 * 
