@@ -31,3 +31,6 @@ If not caught thread will die, if an uncaught exception handler is registered th
 Former clears the interrupt status while the later does not.
 Thread.interrupt() sets this flag.
 status is cleared after IE is thrown.
+
+###Difference between volatile and atomic?
+Volatile guarantees happens-before that a write will happen before any subsequent write. atomic variables provide option to perform compound operation atomically.
