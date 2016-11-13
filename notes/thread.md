@@ -34,3 +34,9 @@ status is cleared after IE is thrown.
 
 ###Difference between volatile and atomic?
 Volatile guarantees happens-before that a write will happen before any subsequent write. atomic variables provide option to perform compound operation atomically.
+
+###Why String is immutable?
+1. Cache hashcode value and can be used in HashMap
+2. Security issue, accessing any file by changing name or loading class. Used as parameters in many Java classes.
+3. Can be shared safely between threads.
+4. String pool.
