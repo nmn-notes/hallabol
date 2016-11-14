@@ -70,7 +70,7 @@ public class Palindrome {
 	 */
 	public static int hasPalindrome(final String str) {
 		for (int i = 0; i < str.length() - 1; i++) {
-			for (int j = str.length() - 1; j > i + 1; j--) {
+			for (int j = str.length() - 1; j > i; j--) {
 				if (isPalindrome(str, i, j)) {
 					return j - i + 1;
 				}
