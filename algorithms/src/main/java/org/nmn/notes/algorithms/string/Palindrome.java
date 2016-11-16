@@ -85,13 +85,12 @@ public class Palindrome {
 	 * @param str String.
 	 * @return length of substring which is a palindrome.
 	 */
-	public static int maxPalindromeLengthBruteForce(final String str) {
-		return maxPalindromeLengthBruteForce(str, 0, str.length() - 1);
+	public static int maxPalindromeLength(final String str) {
+		return maxPalindromeLength(str, 0, str.length() - 1);
 	}
 
 	/**
 	 * Gets the length of maximum palindrome available in the string.
-	 * The methods employs bruteforce method to find the maximum length.
 	 * 
 	 * It first checks if the given string is palindrome or not.
 	 * If not, it makes recursive call to two substrings of s1
@@ -109,28 +108,22 @@ public class Palindrome {
 	 * @param end index of the substring.
 	 * @return length of the longest substring which is a palindrome.
 	 */
-	private static int maxPalindromeLengthBruteForce(final String str, int start, int end) {
+	public static int maxPalindromeLength(final String str, int start, int end){
 		//Condition to break recursion
 		if (start >= end) {
 			return 1;
 		}
 
-		int i = start;
-		int j = end;
-		//Check if string is palindrome
-		while (i <= j) {
-			//If string is not palindrome, make two recursive calls on left and right substrings.
-			if(str.charAt(i) != str.charAt(j)) {
-				//recursive call to diverge the scope and return the largest palindrome of left and right substring.
-				return Math.max(
-					//check if left substring start, end - 1 is a substring.
-					maxPalindromeLengthBruteForce(str, start, end - 1),
-					//check if right substring start + 1, end is a substring.
-					maxPalindromeLengthBruteForce(str, start + 1, end));
-			}
-			i++;
-			j--;
+		if (isPalindrome(str, start, end)) {
+			return end - start + 1; 
 		}
-		return (end - start) + 1;
+
+		//return longest substring of left and right substring.
+		return Math.max(
+			//longest palindrome in left substring.
+			maxPalindromeLength(str, start, end - 1),
+			//longest palindrome in right substring.  
+			maxPalindromeLength(str, start + 1, end)
+		);
 	}
 }

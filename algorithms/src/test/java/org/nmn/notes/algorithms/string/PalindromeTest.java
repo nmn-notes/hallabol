@@ -56,15 +56,15 @@ public class PalindromeTest {
 	}
 
 	/**
-	 * Test maximum length of a palindrome in a string by using brute force approach.
+	 * Test maximum length of a palindrome in a string.
 	 */
 	@Test
-	public void testMaxPalindromeLengthByBruteForce() {
-		assertEquals(Palindrome.maxPalindromeLengthBruteForce("abc"), 1); // bb is a palindrome
-		assertEquals(Palindrome.maxPalindromeLengthBruteForce("abba"), 4); // abba is a palindrome
-		assertEquals(Palindrome.maxPalindromeLengthBruteForce("abdba"), 5); // abdba is a palindrome
-		assertEquals(Palindrome.maxPalindromeLengthBruteForce("abb"), 2); // bb is a sub-string which is a palindrome
+	public void testMaxPalindromeLength() {
+		assertEquals(Palindrome.maxPalindromeLength("abc"), 1); // bb is a palindrome
+		assertEquals(Palindrome.maxPalindromeLength("abba"), 4); // abba is a palindrome
+		assertEquals(Palindrome.maxPalindromeLength("abdba"), 5); // abdba is a palindrome
+		assertEquals(Palindrome.maxPalindromeLength("abb"), 2); // bb is a sub-string which is a palindrome
 		assertEquals(
-			Palindrome.maxPalindromeLengthBruteForce("kfabdbam"), 5); //abdba is a sub-string which is a palindrome
+			Palindrome.maxPalindromeLength("kfabdbam"), 5); //abdba is a sub-string which is a palindrome
 	}
 }
