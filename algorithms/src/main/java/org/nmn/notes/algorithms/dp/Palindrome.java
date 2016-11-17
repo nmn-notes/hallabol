@@ -29,12 +29,12 @@ public class Palindrome {
 	 */
 	public static int longestPalindrome(final String str) {
 		int length = str.length();
-		int [][] a = new int[length][length];
+		int [][] L = new int[length][length];
 
 		for (int i = 0; i < length; i ++) {
 			for (int j = 0; j < length; j++) {
 				//Every character is a palindrome of length 1.
-				a[i][j] = (i == j) ? 1 : -1;
+				L[i][j] = (i == j) ? 1 : -1;
 			}
 		}
 
@@ -47,14 +47,14 @@ public class Palindrome {
 
 				//For a substring to be a palindrome, below conditions should match.
 				//a. Either substring is of length 2 or inner substring is also a palindrome.
-				if ((subStrLength == 2 || a[i+1][j-1] != -1) && 
+				if ((subStrLength == 2 || L[i+1][j-1] != -1) && 
 						//b. character at start and end index of the current substring should match.
 						str.charAt(i) == str.charAt(j)) {
 					//new palindrome length = length of inner palindrome + 2 characters at i & j. 
-					a[i][j] = a[i+1][j-1] + 2;
+					L[i][j] = L[i+1][j-1] + 2;
 				}
 				else {
-					a[i][j] = -1;
+					L[i][j] = -1;
 				}
 			}
 			//increment substring length.
@@ -62,6 +62,6 @@ public class Palindrome {
 		}
 
 		//return the highest palindrome found.
-		return max(a);
+		return max(L);
 	}
 }
