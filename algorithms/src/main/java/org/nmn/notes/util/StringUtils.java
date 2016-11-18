@@ -19,4 +19,21 @@ public final class StringUtils {
 	public static boolean isBlankOrEmpty(final String str) {
 		return (null == str || EMPTY_STRING.equals(str.trim())) ? Boolean.TRUE : Boolean.FALSE;
 	}
+
+	/**
+	 * Find the count of occurrence of a character in a given String.
+	 * @param str {@link String}
+	 * @param c character
+	 * @return number of times character c occurred in the given string.
+	 */
+	public static int getOccurrenceCount(final String str, char c) {
+		int count = 0;
+		char [] charArr = str.toCharArray();
+		for (char ch : charArr) {
+			if (ch == c) {
+				count++;
+			}
+		}
+		return count;
+	}
 }
