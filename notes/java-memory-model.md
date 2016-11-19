@@ -12,3 +12,8 @@ Memory Management is the process of recognizing when allocated objects are not l
 ###Disadvantages of Explicit Memory Management:
 * Dangling references, ref points to allocation which has been reallocated to a new object.
 * Space leaks, memory is allocated and no longer referenced but is not released.
+
+###Garbage Collector:
+* Allocating Memory.
+* Ensuring that any referenced objects remain in memory.
+* Recovering memory used by objects that are no longer reachable from references from executing code.
