@@ -31,8 +31,8 @@ Collection of common sorting, searching ,string manipulation and other algorithm
 3. [CoinCount](CoinChange.java)
 
 ###Integer
-1. Multiplication(Multiplication.java)
-2. Prime(Prime.java)
+1. [Multiplication](Multiplication.java)
+2. [Prime](Prime.java)
 
 ###String
 1. [Palindrome](src/main/java/org/nmn/notes/algorithms/string/Palindrome.java)
