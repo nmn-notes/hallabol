@@ -30,6 +30,10 @@ Collection of common sorting, searching ,string manipulation and other algorithm
 2. [Palindrome](src/main/java/org/nmn/notes/algorithms/dp/Palindrome.java)
 3. [CoinCount](CoinChange.java)
 
+###Integer
+1. Multiplication
+2. Prime
+
 ###String
 1. [Palindrome](src/main/java/org/nmn/notes/algorithms/string/Palindrome.java)
  1. isPalidrome
