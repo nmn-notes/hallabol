@@ -17,3 +17,12 @@ Memory Management is the process of recognizing when allocated objects are not l
 * Allocating Memory.
 * Ensuring that any referenced objects remain in memory.
 * Recovering memory used by objects that are no longer reachable from references from executing code.
+
+###Advantages of GC:
+* Frees user from responsibility of memory allocation and deallocation.
+* Reduces memory leaks.
+
+###Disadvantages of GC:
+* Performance Hit, complex task taking time and resources of its own.
+* No fine-grain control.
+* Cannot force GC.
