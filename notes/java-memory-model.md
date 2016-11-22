@@ -26,3 +26,8 @@ Memory Management is the process of recognizing when allocated objects are not l
 * Performance Hit, complex task taking time and resources of its own.
 * No fine-grain control.
 * Cannot force GC.
+
+###Three important criteria of GC:
+* Throughput: The amount of work done by an application as a ratio of time spent in GC.
+* Latency: The time taken by systems in responding to events which is impacted by pauses introduced by GC.
+* Memory:
