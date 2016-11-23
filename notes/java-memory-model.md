@@ -31,3 +31,6 @@ Memory Management is the process of recognizing when allocated objects are not l
 * Throughput: The amount of work done by an application as a ratio of time spent in GC.
 * Latency: The time taken by systems in responding to events which is impacted by pauses introduced by GC.
 * Memory:
+
+Stop-The-World Events:
+GC signals all running threads to stop when they come to a "safepoint", which is a point during program execution at which all GC roots are known and all heap objects are consistent. Depending on what a thread is doing it may take some time to reach a safepoint. Safepoint checks are usually performed at method returns and loop back edges, but can be optimized away in some places making them more dynamically rare. Ex: If a thread is copying a large array, cloning a large object, it may take some time to reach a safepoint.
