@@ -8,6 +8,19 @@ package org.nmn.notes.algorithms.integer;
 public class GCD {
 
 	/**
+	 * Brute force approach to find gcd od two numbers.
+	 * Start dividing number a and b with b till we find a number which divides both numbers.
+	 */
+	public static int gcdBruteForce(int a, int b) {
+		for (int i = b; i > 1; i--) {
+			if (a % i == 0 && b % i == 0) {
+				return i;
+			}
+		}
+		return 1;
+	}
+
+	/**
 	 * Euclidean recursive algorithm to find GCD of two numbers.
 	 * 
 	 * @param a first number.
