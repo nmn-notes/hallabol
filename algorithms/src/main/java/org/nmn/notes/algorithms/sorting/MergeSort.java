@@ -64,13 +64,12 @@ public class MergeSort {
 			if (arr1[i] < arr2[j]) {
 				arr[k] = arr1[i];
 				i++;
-				k++;
 			}
 			else {
 				arr[k] = arr2[j];
 				j++;
-				k++;
 			}
+			k++;
 		}
 
 		// copy remaining elements of arr1
