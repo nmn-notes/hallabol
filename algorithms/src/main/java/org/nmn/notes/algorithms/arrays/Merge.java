@@ -100,4 +100,47 @@ public class Merge {
 
 		return firstElement + secondElement;
 	}
+
+	/**
+	 * Find Kth smallest element after merging two sorted arrays.
+	 * 
+	 * @param arr1 first sorted array.
+	 * @param arr2 second sorted array.
+	 * @param k index of the smallest element to be found in the merged array.
+	 * @return Kth smallest element.
+	 * @throws IllegalArgumentException if k is out of range.
+	 */
+	public static int findKthSmallestElement(int [] arr1, int [] arr2, int k) {
+		if (k < 0 && k >= (arr1.length + arr2.length)) {
+			throw new IllegalArgumentException("Index out of bound");
+		}
+
+		int i = 0;
+		int j = 0;
+		int m = 0;
+		int element = -1;
+
+		while (m <= k && i < arr1.length && j < arr2.length) {
+			if (arr1[i] < arr2[j]) {
+				element = arr1[i];
+				i++;
+			}
+			else {
+				element = arr2[j];
+				j++;
+			}
+			m++;
+		}
+
+		int remainingElements = k - m;
+
+		if (m <= k && i < arr1.length) {
+			element = arr1[i + remainingElements];
+		}
+		else if (m <= k && j < arr2.length) {
+			element = arr2[j + remainingElements];
+		}
+
+		return element;
+	}
 }

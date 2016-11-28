@@ -48,4 +48,16 @@ public class MergeTest {
 		arr2 = new int[] {1};
 		assertEquals(Merge.sumOfMiddleElements(arr1, arr2), 2);
 	}
+
+	/**
+	 * Test Kth smallest element in two sorted array.
+	 */
+	@Test
+	public void testFindKthSmallestElement() {
+		int [] arr1 = {2, 4, 5};
+		int [] arr2 = {0, 1, 3, 6, 7, 8, 9};
+		for (int i = 0; i < arr1.length + arr2.length; i++) {
+			assertEquals(Merge.findKthSmallestElement(arr1, arr2, i), i);
+		}
+	}
 }
