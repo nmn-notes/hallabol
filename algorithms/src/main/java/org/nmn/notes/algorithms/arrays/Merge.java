@@ -143,4 +143,33 @@ public class Merge {
 
 		return element;
 	}
+
+	/**
+	 * Find median of two sorted integer array.
+	 * If merged array length is even, median will mean of middle two elements,
+	 * else it will be middle element of the merged array.
+	 * 
+	 * @param arr1 first sorted integer array.
+	 * @param arr2 second sorted integer array.
+	 * @return median of the merged array.
+	 * @throws Exception if any.
+	 */
+	public static double findMedian(int [] arr1, int [] arr2) {
+		if (arr1.length == 0 && arr2.length == 0) {
+			throw new IllegalArgumentException("Both arrays cannot be empty");
+		}
+
+		int length = arr1.length + arr2.length;
+		double median;
+
+		if (length % 2 == 0) {
+			double sumOfMiddleElements = sumOfMiddleElements(arr1, arr2);
+			median = sumOfMiddleElements / 2;
+		}
+		else {
+			median = findKthSmallestElement(arr1, arr2, length / 2);
+		}
+
+		return median;
+	}
 }
