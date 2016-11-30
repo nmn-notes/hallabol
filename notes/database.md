@@ -61,3 +61,10 @@ During transaction, a row is retrieved twice and the values within the row diffe
 
 *Durable:*
 Once a value is updated, it will be written to a stable storage and recoverable if the database crashes.
+
+*Distinct:*
+Will sort the result and implicitly apply group by. Uses temp space for sorting, query will be slow since it is using common temp space.
+
+*Join Vs Subqueries:*
+One table with more records and another table with relatively very less number of records, then it is ok to use sub query. But if both tables have large data then you would want to see hash join
+If we could filter records from one table using index on column and use that value to query another table then go for sub-query, but if both tables have almost equal records then join.
