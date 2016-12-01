@@ -15,7 +15,7 @@ When number of objects in memtable reaches a threshold level, the contents of th
 Paxos is a consensus algorithm that allows distributed peer nodes to agree on a proposal, without requiring a master to coordinate a transactation.
 
 The Cassandra implementation extends the basic Paxos algorithm in order to support the desired read-before-write semantics (also known as "check-and-set"), and to allow the state to be reset between transactions. It does this by inserting two additional phases into the algorithm, so that it works as follows:
-1. Prepare/Promise
-2. Read/Results
-3. Propose/Accept
-4. Commit/Ack
+* Prepare/Promise
+* Read/Results
+* Propose/Accept
+* Commit/Ack
