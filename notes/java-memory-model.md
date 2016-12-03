@@ -34,3 +34,19 @@ Memory Management is the process of recognizing when allocated objects are not l
 
 Stop-The-World Events:
 GC signals all running threads to stop when they come to a "safepoint", which is a point during program execution at which all GC roots are known and all heap objects are consistent. Depending on what a thread is doing it may take some time to reach a safepoint. Safepoint checks are usually performed at method returns and loop back edges, but can be optimized away in some places making them more dynamically rare. Ex: If a thread is copying a large array, cloning a large object, it may take some time to reach a safepoint.
+
+*Out-Of-Memory Errors*
+Causes:
+* Insufficient memory configuration
+* Memory leak
+* Memory fragmentation
+* Excess GC overhead
+* Allocating oversized temporary objects
+* Churn rate and High transactional memory Usage (High number of temp objects in highly concurrent env will lead to temp objects moving to old generation)
+* Incorrect implementation of Equal and Hashcode
+
+Solution:
+* Extensive load testing
+* Young generation sizing exercise
+* Allocation analysis
+* Several Heap dump under full load to analyze how much memory each transcation keeps alive and try to bring it down.
