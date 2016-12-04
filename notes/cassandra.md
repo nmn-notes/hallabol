@@ -22,10 +22,10 @@ The Cassandra implementation extends the basic Paxos algorithm in order to suppo
 
 Compaction Strategies:
 * SizeTieredCompactonStrategy (STCS)
-  ** write-intensive tables
+  * write-intensive tables
 * LevelCompactionStrategy (LCS)
-  ** read-intensive tables
+  * read-intensive tables
 * DateTieredCompactionStrategy (DTCS)
-  ** time series or other date-based data.
+  * time series or other date-based data.
 
 Cassandra uses anti-entropy protocols which work by comparing replicas of data and reconciling differences observed between the replicas.
