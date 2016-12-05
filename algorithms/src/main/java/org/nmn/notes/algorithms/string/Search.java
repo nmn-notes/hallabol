@@ -34,7 +34,7 @@ public class Search {
 	 * 		   <code>false</code> otherwise.
 	 * @throws Exception if any.
 	 */
-	public static boolean contains(String s1, String s2) {
+	public static boolean contains(final String s1, final String s2) {
 		if (s1 == null || s2 == null || s1.length() < s2.length()) {
 			return FALSE;
 		}
@@ -47,5 +47,19 @@ public class Search {
 			}
 		}
 		return FALSE;
+	}
+
+	/**
+	 * Rabin-Karp string searching algorithm that uses hashing to find any 
+	 * one of a set of pattern strings in a text.
+	 * 
+	 * @param s1 {@link String}
+	 * @param s2 pattern {@link String} to search for.
+	 * @return <code>true</code> if s2 is a substring of s1;
+	 * 		   <code>false</code> otherwise.
+	 * @throws Exception if any.
+	 */
+	public static boolean containsRabinKarp(final String s1, final String s2) {
+		return false;
 	}
 }

@@ -1,9 +1,9 @@
-package org.nmn.notes.algorithms.integer;
+package org.nmn.notes.algorithms.number;
 
 import static org.testng.Assert.assertTrue;
 
 import org.nmn.notes.algorithms.arrays.BinarySearch;
-import org.nmn.notes.algorithms.integer.Prime;
+import org.nmn.notes.algorithms.number.Prime;
 
 import static org.testng.Assert.assertFalse;
 

@@ -169,7 +169,6 @@ public class Merge {
 		else {
 			median = findKthSmallestElement(arr1, arr2, length / 2);
 		}
-
 		return median;
 	}
 }

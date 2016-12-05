@@ -1,8 +1,9 @@
-package org.nmn.notes.algorithms.integer;
+package org.nmn.notes.algorithms.number;
 
+import static org.nmn.notes.algorithms.number.Multiplication.multiply;
 import static org.testng.Assert.assertEquals;
-import static org.nmn.notes.algorithms.integer.Multiplication.multiply;
 
+import org.nmn.notes.algorithms.number.Multiplication;
 import org.testng.annotations.Test;
 
 /**

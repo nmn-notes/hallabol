@@ -1,7 +1,8 @@
-package org.nmn.notes.algorithms.integer;
+package org.nmn.notes.algorithms.number;
 
 import static org.testng.Assert.assertEquals;
 
+import org.nmn.notes.algorithms.number.GCD;
 import org.testng.annotations.Test;
 
 /**

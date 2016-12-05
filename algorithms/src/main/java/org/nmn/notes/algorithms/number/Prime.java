@@ -1,4 +1,4 @@
-package org.nmn.notes.algorithms.integer;
+package org.nmn.notes.algorithms.number;
 
 /**
  * Prime number
