@@ -1,6 +1,6 @@
 Collection of common sorting, searching ,string manipulation and other algorithms
 
-#### Sorting Algorithms:
+### Sorting Algorithms:
 1. [Bubble sort](BubbleSort.java)
 2. [Insertion sort](InsertionSort.java)
 3. [Selection sort](SelectionSort.java)
@@ -8,33 +8,33 @@ Collection of common sorting, searching ,string manipulation and other algorithm
 5. [Quick sort](QuickSort.java)
 6. [Heap sort](HeapSort.java)
 
-#### [Binary Search](BinarySearch.java)
+### [Binary Search](BinarySearch.java)
 1. Iteratively
 2. Recursively
 
-#### [Fibonacci](Fibonacci.java)
+### [Fibonacci](Fibonacci.java)
 1. Naive recursive polynomial complexity
 2. Iterative linear complexity
 
-#### [Subsequence](Subsequence.java)
+### [Subsequence](Subsequence.java)
 1. maxSubsequence
 2. minSubsequence
 3. getSumBruteForce
 4. getSumTwoPointer
 5. getSumBinarySearch
 
-#### Dynamic Programming
+### Dynamic Programming
 1. [Knapsack](Knapsack.java)
    1. recursive
    2. DP
 2. [Palindrome](src/main/java/org/nmn/notes/algorithms/dp/Palindrome.java)
 3. [CoinCount](CoinChange.java)
 
-#### Integer
+### Integer
 1. [Multiplication](Multiplication.java)
 2. [Prime](Prime.java)
 
-#### String
+### String
 1. [Palindrome](src/main/java/org/nmn/notes/algorithms/string/Palindrome.java)
    1. isPalidrome
    2. hasPalindrome
@@ -52,7 +52,7 @@ Collection of common sorting, searching ,string manipulation and other algorithm
    9. isRotated
    10. isRotatedModified
 
-#### Data Structures
+### Data Structures
 1. [Singly LinkedList](SinglyLinkedList.java)
    1. add
    2. addFirst
